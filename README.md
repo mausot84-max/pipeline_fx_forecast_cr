@@ -147,7 +147,7 @@ All installed automatically by `00_setup.R`.
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/<USER>/pipeline_fx_forecast_cr.git
+git clone https://github.com/mausot84-max/pipeline_fx_forecast_cr.git
 cd pipeline_fx_forecast_cr
 
 # 2. Crear .Renviron con tus credenciales BCCR SDDE
@@ -189,16 +189,16 @@ Outputs centrales:
 
 Si usás el pipeline o los hallazgos en tu propia investigación, citá el paper asociado:
 
-> Soto Rivera, M. (2026). *Cuando la abundancia no se absorbe: una conjetura sobre la apreciación real y el ajuste sectorial en Costa Rica bajo Mundell-Fleming, 2010–2025*. Working paper.
+> Soto Rodríguez, M. (2026). *Cuando la abundancia no se absorbe: una conjetura sobre la apreciación real y el ajuste sectorial en Costa Rica bajo Mundell-Fleming, 2010–2025*. Working paper.
 
 BibTeX:
 
 ```bibtex
-@unpublished{sotorivera2026abundancia,
-  author = {Soto Rivera, Mauricio},
+@unpublished{sotorodriguez2026abundancia,
+  author = {Soto Rodríguez, Mauricio},
   title  = {Cuando la abundancia no se absorbe: una conjetura sobre la apreciación real y el ajuste sectorial en Costa Rica bajo Mundell-Fleming, 2010--2025},
   year   = {2026},
-  note   = {Working paper. Pipeline disponible en https://github.com/<USER>/pipeline_fx_forecast_cr}
+  note   = {Working paper. Pipeline disponible en https://github.com/mausot84-max/pipeline_fx_forecast_cr}
 }
 ```
 
