@@ -1,19 +1,27 @@
 # ============================================================
-# pipeline_fx_forecast_cr — Environment Variables
+# pipeline_fx_forecast_cr — Environment Variables (TEMPLATE)
 # ============================================================
-# Copy to .Renviron and fill in credentials.
-# NEVER commit .Renviron to version control.
-# After editing, RESTART R (Ctrl+Shift+F10).
+# Este archivo es un TEMPLATE. NUNCA coloques credenciales reales acá
+# ni lo commitees al repositorio público con valores reales.
+#
+# Para usar el pipeline:
+#   1. Copiar este archivo a .Renviron en la raíz del proyecto:
+#        cp .Renviron.example .Renviron
+#   2. Editar .Renviron y reemplazar los placeholders YOUR_*
+#      por tus credenciales propias.
+#   3. .Renviron está incluido en .gitignore — NO se commitea.
+#   4. Reiniciar R (Ctrl+Shift+F10) para que las variables se carguen.
 # ============================================================
 
-# --- BCCR SDDE API (new portal, JWT token) --------------------
-# 1. Go to: https://sdd.bccr.fi.cr
-# 2. Register / log in
-# 3. Go to Mi Perfil -> "Generar token" -> "Copiar token"
-# 4. Paste the JWT token below (long string starting with eyJ...)
-BCCR_EMAIL=mausot84@gmail.com
-BCCR_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJCQ0NSLVNEREUiLCJzdWIiOiJtYXVzb3Q4NEBnbWFpbC5jb20iLCJhdWQiOiJTRERFLVNpdGlvRXh0ZXJubyIsImV4cCI6MjUzNDAyMzAwODAwLCJuYmYiOjE3NzU3NzQzNDQsImlhdCI6MTc3NTc3NDM0NCwianRpIjoiMzc4ZjRmYWUtNGFkNi00M2E5LWIwYzMtMDE4OGYyMzQwMjBjIiwiZW1haWwiOiJtYXVzb3Q4NEBnbWFpbC5jb20ifQ.t2pDDIr-HcWHvcK444EyixXTjQjZ15UV5-r4Po5Uwmc
+# --- BCCR SDDE API (portal nuevo, token JWT) ------------------
+# Obtener el token en: https://sdd.bccr.fi.cr
+# Mi Perfil -> "Generar token" -> "Copiar token"
+# El JWT es una cadena larga que empieza con "eyJ..."
+BCCR_EMAIL=YOUR_EMAIL@example.com
+BCCR_TOKEN=YOUR_BCCR_JWT_TOKEN_HERE
 
 # --- FRED API (Federal Reserve Economic Data) -----------------
-# Register at: https://fred.stlouisfed.org/docs/api/api_key.html
-FRED_API_KEY=18bed0cadf80572b85cbd5232866f894
+# Obtener el key en: https://fred.stlouisfed.org/docs/api/api_key.html
+# Sólo requerido para los scripts de forecasting semanal (scripts/01-19).
+# Los scripts de la pinza empírica (cierre_v6/) NO requieren FRED.
+FRED_API_KEY=YOUR_FRED_API_KEY_HERE
