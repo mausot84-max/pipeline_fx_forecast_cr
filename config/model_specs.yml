@@ -1,0 +1,206 @@
+# ============================================================
+# Model Specifications — pipeline_fx_forecast_cr
+# ============================================================
+# Each model family defines: id, name, type, frequency, targets,
+# enabled flag, and model-specific parameters.
+# ============================================================
+
+# --- BENCHMARKS ------------------------------------------------
+benchmarks:
+  - id: rw
+    name: Random Walk
+    type: benchmark
+    frequency: [weekly, monthly]
+    target: [fx_level, log_fx]
+    enabled: true
+    notes: "Naive no-change forecast"
+
+  - id: rw_drift
+    name: Random Walk with Drift
+    type: benchmark
+    frequency: [weekly, monthly]
+    target: [fx_level, log_fx]
+    enabled: true
+    notes: "Random walk plus estimated drift"
+
+  - id: ma
+    name: Moving Average
+    type: benchmark
+    frequency: [weekly, monthly]
+    target: [fx_level]
+    enabled: true
+    params:
+      windows: [4, 8, 12]
+
+  - id: arima
+    name: Auto ARIMA
+    type: benchmark
+    frequency: [weekly, monthly]
+    target: [fx_level, log_fx, fx_return]
+    enabled: true
+    params:
+      max_p: 5
+      max_q: 5
+      max_d: 2
+      seasonal: false
+
+  - id: ets
+    name: ETS
+    type: benchmark
+    frequency: [weekly, monthly]
+    target: [fx_level]
+    enabled: true
+
+# --- MODELS WITH REGRESSORS -----------------------------------
+regressors:
+  - id: arimax
+    name: ARIMAX / Dynamic Regression
+    type: regressor
+    frequency: [weekly, monthly]
+    target: [fx_return, fx_change]
+    enabled: true
+    params:
+      max_p: 3
+      max_q: 3
+
+  - id: lm_lags
+    name: Linear Regression with Lags
+    type: regressor
+    frequency: [weekly, monthly]
+    target: [fx_return, fx_change]
+    enabled: true
+    params:
+      max_lags: 4
+
+  - id: ridge
+    name: Ridge Regression
+    type: regressor
+    frequency: [weekly, monthly]
+    target: [fx_return, fx_change]
+    enabled: true
+    params:
+      alpha: 0.0
+      nlambda: 100
+
+  - id: lasso
+    name: Lasso Regression
+    type: regressor
+    frequency: [weekly, monthly]
+    target: [fx_return, fx_change]
+    enabled: true
+    params:
+      alpha: 1.0
+      nlambda: 100
+
+  - id: enet
+    name: Elastic Net
+    type: regressor
+    frequency: [weekly, monthly]
+    target: [fx_return, fx_change]
+    enabled: true
+    params:
+      alpha_grid: [0.25, 0.5, 0.75]
+      nlambda: 100
+
+# --- MULTIVARIATE MODELS --------------------------------------
+multivariate:
+  - id: var
+    name: VAR
+    type: multivariate
+    frequency: [monthly]
+    target: [fx_return]
+    enabled: true
+    params:
+      max_p: 4
+      ic: "AIC"
+
+  - id: pca_reg
+    name: PCA + Regression
+    type: multivariate
+    frequency: [weekly, monthly]
+    target: [fx_return, fx_change]
+    enabled: true
+    params:
+      n_components: [3, 5]
+
+  - id: local_proj
+    name: Local Projections
+    type: multivariate
+    frequency: [weekly, monthly]
+    target: [fx_cumreturn_h]
+    enabled: true
+    params:
+      max_lags: 4
+    notes: "Jorda-style direct forecasts by horizon"
+
+# --- RISK MODELS ----------------------------------------------
+risk:
+  - id: qreg
+    name: Quantile Regression
+    type: risk
+    frequency: [weekly, monthly]
+    target: [fx_return, fx_change]
+    enabled: true
+    params:
+      quantiles: [0.025, 0.05, 0.10, 0.25, 0.50, 0.75, 0.90, 0.95, 0.975]
+
+  - id: boot_pi
+    name: Bootstrap Prediction Intervals
+    type: risk
+    frequency: [weekly, monthly]
+    target: [fx_return]
+    enabled: true
+    params:
+      n_boot: 1000
+      ci_levels: [0.80, 0.90, 0.95]
+
+# --- REGIME MODELS ---------------------------------------------
+regime:
+  - id: regime_rules
+    name: Rule-Based Regime Classification
+    type: regime
+    frequency: [weekly, monthly]
+    target: [regime_label]
+    enabled: true
+
+  - id: regime_logit
+    name: Logit Regime Transition
+    type: regime
+    frequency: [monthly]
+    target: [regime_transition]
+    enabled: true
+
+  - id: regime_markov
+    name: Markov Switching
+    type: regime
+    frequency: [monthly]
+    target: [fx_return]
+    enabled: false
+    notes: "Enable only if sample size and convergence allow"
+
+# --- CLASSIFICATION / EARLY WARNING ----------------------------
+classification:
+  - id: logit_downside
+    name: Logit Downside Event
+    type: classification
+    frequency: [weekly, monthly]
+    target: [event_downside]
+    enabled: true
+
+  - id: logit_upside
+    name: Logit Upside Event
+    type: classification
+    frequency: [weekly, monthly]
+    target: [event_upside]
+    enabled: true
+
+# --- BACKTESTING -----------------------------------------------
+backtesting:
+  scheme: expanding  # expanding | rolling
+  min_train_obs: 104  # ~2 years of weekly data
+  step_size: 4        # re-estimate every 4 periods
+  eval_metrics:
+    forecast: [rmse, mae, mape, directional_accuracy]
+    probabilistic: [coverage_90, coverage_95, interval_width]
+    risk: [quantile_loss, hit_rate]
+    regime: [accuracy, precision, recall, auc]

@@ -1,0 +1,13 @@
+concept_name,var_name,source,ticker,frequency,start_date,end_date,transform,include,family,benchmark,multivariate,risk,regime,max_lags,contemporaneous,min_coverage,notes
+VIX,vix,fred,VIXCLS,daily,2010-01-01,,none,TRUE,financial_global,TRUE,TRUE,TRUE,TRUE,4,TRUE,0.90,CBOE Volatility Index (FRED)
+DXY Dollar Index,dxy,fred,DTWEXBGS,daily,2010-01-01,,none,TRUE,financial_global,TRUE,TRUE,TRUE,TRUE,4,TRUE,0.85,Trade Weighted USD Index Broad (FRED)
+Fed Funds Effective Rate,fedfunds,fred,FEDFUNDS,monthly,2010-01-01,,none,TRUE,external_monetary,TRUE,TRUE,TRUE,TRUE,3,FALSE,0.90,Federal funds effective rate
+US Treasury 2Y,ust2y,fred,DGS2,daily,2010-01-01,,none,TRUE,external_monetary,FALSE,TRUE,TRUE,TRUE,4,TRUE,0.85,US Treasury 2-year yield
+US Treasury 10Y,ust10y,fred,DGS10,daily,2010-01-01,,none,TRUE,external_monetary,FALSE,TRUE,TRUE,TRUE,4,TRUE,0.85,US Treasury 10-year yield
+Term Spread 10Y-2Y,term_spread_raw,fred,T10Y2Y,daily,2010-01-01,,none,TRUE,external_monetary,FALSE,TRUE,TRUE,TRUE,4,TRUE,0.85,10Y minus 2Y
+WTI Crude Oil,wti,fred,DCOILWTICO,daily,2010-01-01,,none,TRUE,external_real,FALSE,TRUE,TRUE,TRUE,4,TRUE,0.85,WTI crude oil spot price
+US Consumer Sentiment,us_sentiment,fred,UMCSENT,monthly,2010-01-01,,none,TRUE,sentiment,FALSE,TRUE,FALSE,TRUE,3,FALSE,0.80,U Michigan consumer sentiment
+Chicago Fed NFCI,nfci,fred,NFCI,weekly,2010-01-01,,none,TRUE,financial_global,FALSE,TRUE,TRUE,TRUE,4,FALSE,0.75,National Financial Conditions Index
+S&P 500,sp500,yahoo,^GSPC,daily,2010-01-01,,none,TRUE,financial_global,FALSE,TRUE,TRUE,TRUE,4,TRUE,0.90,S&P 500 (Yahoo fallback)
+EM Bond Spread,embi,fred,BAMLEMRECRPIEY,daily,2010-01-01,,none,FALSE,financial_global,FALSE,TRUE,TRUE,TRUE,4,TRUE,0.70,ICE BofA EM Corp OAS proxy
+US Industrial Production,us_ip,fred,INDPRO,monthly,2010-01-01,,none,TRUE,external_real,FALSE,TRUE,FALSE,FALSE,3,FALSE,0.80,US industrial production (requerido por ISLMBP IS_TV e IS_TH)

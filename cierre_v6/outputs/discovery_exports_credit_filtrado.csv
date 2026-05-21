@@ -1,0 +1,14 @@
+code,status,name,periodicidad,n,es_export,es_credit,es_moneda_usd,es_moneda_crc,es_por_actividad,ciiu_sugerido
+28888,ok,"Tasa pasivas por plazo dólares, financieras,  1 día",NA,13,FALSE,FALSE,TRUE,FALSE,FALSE,K
+28889,ok,"Tasa pasivas por plazo dólares, financieras,  2-6 días",NA,13,FALSE,FALSE,TRUE,FALSE,FALSE,K
+28890,ok,"Tasa pasivas por plazo dólares, financieras,  7-13 días",NA,13,FALSE,FALSE,TRUE,FALSE,FALSE,K
+28891,ok,"Tasa pasivas por plazo dólares, financieras,  14-20 días",NA,13,FALSE,FALSE,TRUE,FALSE,FALSE,K
+28892,ok,"Tasa pasivas por plazo dólares, financieras,  21-29 días",NA,13,FALSE,FALSE,TRUE,FALSE,FALSE,K
+28893,ok,"Tasa pasivas por plazo dólares, financieras,  30-59 días",NA,13,FALSE,FALSE,TRUE,FALSE,FALSE,K
+28894,ok,"Tasa pasivas por plazo dólares, financieras,  60-89 días",NA,13,FALSE,FALSE,TRUE,FALSE,FALSE,K
+28895,ok,"Tasa pasivas por plazo dólares, financieras,  90-119 días",NA,13,FALSE,FALSE,TRUE,FALSE,FALSE,K
+28896,ok,"Tasa pasivas por plazo dólares, financieras,  120-149 días",NA,13,FALSE,FALSE,TRUE,FALSE,FALSE,K
+28897,ok,"Tasa pasivas por plazo dólares, financieras,  150-179 días",NA,13,FALSE,FALSE,TRUE,FALSE,FALSE,K
+28898,ok,"Tasa pasivas por plazo dólares, financieras,  180-209 días",NA,13,FALSE,FALSE,TRUE,FALSE,FALSE,K
+28899,ok,"Tasa pasivas por plazo dólares, financieras,  210-239 días",NA,13,FALSE,FALSE,TRUE,FALSE,FALSE,K
+28900,ok,"Tasa pasivas por plazo dólares, financieras,  240-269 días",NA,13,FALSE,FALSE,TRUE,FALSE,FALSE,K

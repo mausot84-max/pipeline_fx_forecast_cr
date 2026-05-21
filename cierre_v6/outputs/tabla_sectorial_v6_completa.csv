@@ -1,0 +1,19 @@
+seccion,sector_label,codigo_sdde,growth_avg_2015_2025,growth_dec_2015_2025,paper_v4_value,delta_vs_paper_v4,nota
+TOTAL,IMAE general (base 2017),95087,38.8,39.1,,,ancla agregada
+A,"Agricultura, silvicultura y pesca",95088,17.5,19.4,18,-0.5,paper v4 +18 -> recalculo +17.5 (coincide)
+B,Extracción de minas y canteras,95104,-3.4,,,,nuevo en v6
+C,Industria manufacturera,95105,63.2,57.9,63,+0.2,paper v4 +63 -> recalculo +63.2 (coincide)
+DE,"Electricidad, agua y servicios de saneamiento",95137,19.4,,,,nuevo en v6
+F,Construccion,95138,-12.3,9.5,-13,+0.7,paper v4 -13 -> recalculo -12.3 (coincide en signo y orden)
+G,Comercio,95141,21.7,21.1,22,-0.3,paper v4 +22 -> recalculo +21.7 (coincide)
+H,"Transporte, almacenamiento",95150,40.0,42.7,,,nuevo en v6
+I,Alojamiento y servicios de comida,95151,2.6,1.7,3,-0.4,paper v4 +3 -> recalculo +2.6 (coincide)
+J,Informacion y comunicaciones,95152,66.9,62.5,67,-0.1,paper v4 +67 -> recalculo +66.9 (coincide)
+K,Actividades financieras y de seguros,95153,51.9,47.9,,,nuevo en v6
+L,Actividades inmobiliarias,95154,25.3,25.5,,,nuevo en v6
+MN,"Profesional, cientifico, tecnico, administrativo",95155,109.4,103.7,109,+0.4,paper v4 +109 -> recalculo +109.4 (coincide)
+O,Administracion publica y planes de seguridad social,95156,10.0,,,,nuevo en v6
+PQ,Ensenanza y actividades de la salud humana,95157,31.0,,,,nuevo en v6
+RS,Otras actividades,95158,26.2,,,,nuevo en v6
+REGIMEN_DEFINITIVO,IMAE Regimen Definitivo,95106,5.6,8.2,,,"el regimen definitivo apenas crece"
+REGIMEN_ESPECIAL,IMAE Regimen Especial (zonas francas),95113,244.1,205.5,,,"el regimen especial es el motor del crecimiento agregado"

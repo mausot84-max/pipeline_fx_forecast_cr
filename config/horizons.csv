@@ -1,0 +1,9 @@
+horizon_label,horizon_periods,frequency,description
+1w,1,weekly,One week ahead
+4w,4,weekly,Four weeks ahead
+8w,8,weekly,Eight weeks ahead
+12w,12,weekly,Twelve weeks ahead
+24w,24,weekly,Twenty-four weeks ahead
+1m,1,monthly,One month ahead
+3m,3,monthly,Three months ahead
+6m,6,monthly,Six months ahead

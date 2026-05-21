@@ -1,0 +1,82 @@
+# ============================================================
+# Regime Rules — pipeline_fx_forecast_cr
+# ============================================================
+# NAMING CONVENTION (matches 08_feature_engineering.R exactly):
+#   Returns:    {var}_ret{n}       e.g. fx_sell_ret12
+#   Volatility: {var}_ret1_vol{n}  e.g. fx_sell_ret1_vol8
+#   Z-scores:   {var}_z            e.g. vix_z
+#   YoY change: {var}_yoy          e.g. rin_yoy
+#   Spreads:    rate_diff_cr_us, term_spread
+#   Levels:     vix, dxy, tpm, etc.
+# ============================================================
+
+regimes:
+  abundance:
+    label: "Abundancia"
+    code: 1
+    description: >
+      Structural FX surplus: robust inflows, CRC appreciating,
+      rising reserves, benign global conditions.
+    rules:
+      fx_sell_ret12: "< -0.01"
+      rin_yoy: "> 0"
+      vix: "< 25"
+      dxy_ret12: "< 0.03"
+
+  compression:
+    label: "Compresion"
+    code: 2
+    description: >
+      FX surplus persists but weakening. Exchange rate stabilising,
+      mixed signals.
+    rules:
+      fx_sell_ret12: ">= -0.01 & <= 0.01"
+
+  stress:
+    label: "Estres"
+    code: 3
+    description: >
+      Depreciation pressure, external deterioration, surplus eroding.
+    rules:
+      fx_sell_ret12: "> 0.01"
+      vix: "> 25"
+      dxy_ret12: "> 0.03"
+
+# --- Composite pressure index --------------------------------
+# Uses exact variable names from feature engineering.
+composite_index:
+  components:
+    - var: fx_sell_ret12
+      weight: 0.30
+      direction: positive    # higher = more depreciation = stress
+    - var: vix_z
+      weight: 0.20
+      direction: positive    # higher z = more stress
+    - var: dxy_ret12
+      weight: 0.15
+      direction: positive    # strong USD = stress for EM
+    - var: rin_yoy
+      weight: 0.20
+      direction: negative    # higher reserves growth = less stress
+    - var: tpm_ret6
+      weight: 0.15
+      direction: positive    # rate hikes = tighter conditions
+  thresholds:
+    abundance: -0.5
+    stress: 0.5
+
+# --- Event definitions ----------------------------------------
+events:
+  downside:
+    description: "Large FX appreciation (CRC strengthens, CRC/USD falls)"
+    thresholds:
+      4w: -0.015
+      8w: -0.025
+      12w: -0.035
+
+  upside:
+    description: "Large FX depreciation (CRC weakens, CRC/USD rises)"
+    thresholds:
+      4w: 0.015
+      8w: 0.025
+      12w: 0.035

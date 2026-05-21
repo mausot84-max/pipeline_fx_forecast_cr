@@ -1,0 +1,52 @@
+concept_name,var_name,source,series_code,frequency,start_date,end_date,transform,include,family,benchmark,multivariate,risk,regime,max_lags,contemporaneous,min_coverage,notes
+Tipo de cambio venta,fx_sell,bccr,318,daily,2010-01-01,,none,TRUE,target,TRUE,TRUE,TRUE,TRUE,12,TRUE,0.90,VALIDADO
+Tipo de cambio compra,fx_buy,bccr,317,daily,2010-01-01,,none,TRUE,target,FALSE,FALSE,FALSE,FALSE,12,TRUE,0.90,VALIDADO
+TC MONEX promedio,fx_monex,bccr,3323,daily,2010-01-01,,none,TRUE,target,FALSE,TRUE,FALSE,TRUE,4,TRUE,0.85,VALIDADO TC promedio MONEX
+TPM,tpm,bccr,3541,daily,2010-01-01,,none,TRUE,local_monetary,TRUE,TRUE,TRUE,TRUE,4,FALSE,0.80,VALIDADO
+Tasa basica pasiva,tbp,bccr,423,daily,2010-01-01,,none,TRUE,local_monetary,FALSE,TRUE,FALSE,TRUE,4,FALSE,0.80,VALIDADO
+Tasa efectiva en dolares,ted,bccr,23698,daily,2010-01-01,,none,TRUE,local_monetary,FALSE,TRUE,FALSE,TRUE,4,FALSE,0.70,VALIDADO
+IPC general,inflation_yoy,bccr,25485,monthly,2010-01-01,,none,TRUE,local_monetary,TRUE,TRUE,TRUE,TRUE,3,FALSE,0.80,VALIDADO IPC general
+ITCER multilateral,itcer,bccr,24329,monthly,2010-01-01,,none,TRUE,local_real,TRUE,TRUE,TRUE,TRUE,3,FALSE,0.80,VALIDADO ITCER cuadro 856
+IPC subyacente ISI,core_inflation,bccr,24168,monthly,2010-01-01,,none,TRUE,local_monetary,FALSE,TRUE,FALSE,TRUE,3,FALSE,0.70,VALIDADO_PROBABLE ISI_46
+Base monetaria,monetary_base,bccr,1363,monthly,2010-01-01,,none,TRUE,local_monetary,FALSE,TRUE,FALSE,TRUE,3,FALSE,0.70,VALIDADO cuadro 340
+Reservas internacionales netas,rin,bccr,3044,monthly,2010-01-01,,none,TRUE,flows,TRUE,TRUE,TRUE,TRUE,3,FALSE,0.80,VALIDADO cuadro 749
+Exportaciones FOB total,exports_fob,bccr,33,monthly,2010-01-01,,none,TRUE,flows,FALSE,TRUE,TRUE,TRUE,3,FALSE,0.70,VALIDADO cuadro 82
+Importaciones CIF total,imports_cif,bccr,159,monthly,2010-01-01,,none,TRUE,flows,FALSE,TRUE,TRUE,TRUE,3,FALSE,0.70,VALIDADO cuadro 84
+IMAE original,imae_orig,bccr,35449,monthly,2010-01-01,,none,TRUE,local_real,FALSE,TRUE,FALSE,TRUE,3,FALSE,0.80,VALIDADO base antigua
+IMAE base 2017,imae_tc,bccr,95087,monthly,2015-01-01,,none,TRUE,local_real,TRUE,TRUE,FALSE,TRUE,3,FALSE,0.80,VALIDADO cuadro 954
+IMAE manufactura,imae_manuf,bccr,95105,monthly,2015-01-01,,none,FALSE,local_real,FALSE,TRUE,FALSE,TRUE,3,FALSE,0.70,VALIDADO cuadro 954 - EXCLUIDO del cuadrante islmbp por heterogeneidad ZF
+IMAE financiero,imae_fin,bccr,95153,monthly,2015-01-01,,none,FALSE,local_real,FALSE,TRUE,FALSE,TRUE,3,FALSE,0.70,VALIDADO cuadro 954 - EXCLUIDO del cuadrante islmbp por intermediacion dual moneda
+IMAE comercio,imae_comer,bccr,95116,monthly,2015-01-01,,none,TRUE,local_real,FALSE,TRUE,FALSE,TRUE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 954 - cuadrante NB (G)
+IMAE construccion,imae_const,bccr,95114,monthly,2015-01-01,,none,TRUE,local_real,FALSE,TRUE,FALSE,TRUE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 954 - cuadrante TV (F)
+IMAE agropecuario,imae_agro,bccr,95103,monthly,2015-01-01,,none,TRUE,local_real,FALSE,TRUE,FALSE,TRUE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 954 - cuadrante TV (A)
+IMAE alojamiento y comida,imae_aloj,bccr,95128,monthly,2015-01-01,,none,TRUE,local_real,FALSE,TRUE,FALSE,TRUE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 954 - cuadrante TV (I)
+IMAE transporte,imae_transp,bccr,95125,monthly,2015-01-01,,none,TRUE,local_real,FALSE,TRUE,FALSE,TRUE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 954 - cuadrante NH (H)
+IMAE informacion y comunicaciones,imae_infocom,bccr,95131,monthly,2015-01-01,,none,TRUE,local_real,FALSE,TRUE,FALSE,TRUE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 954 - cuadrante TH (J)
+IMAE actividades profesionales,imae_prof,bccr,95141,monthly,2015-01-01,,none,TRUE,local_real,FALSE,TRUE,FALSE,TRUE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 954 - cuadrante TH (M-N)
+Cuenta corriente BP,current_account,bccr,1,quarterly,2010-01-01,,none,TRUE,flows,FALSE,TRUE,TRUE,TRUE,2,FALSE,0.60,VALIDADO cuadro 467
+IED pasivos,ied_net,bccr,40607,quarterly,2010-01-01,,none,TRUE,flows,FALSE,TRUE,TRUE,TRUE,2,FALSE,0.60,VALIDADO cuadro 414
+Liquidez total M3,m3,bccr,1450,monthly,2010-01-01,,none,TRUE,local_monetary,FALSE,TRUE,FALSE,TRUE,3,FALSE,0.70,VALIDADO cuadro 341
+Liquidez M2 moneda nacional,m2,bccr,1452,monthly,2010-01-01,,none,FALSE,local_monetary,FALSE,TRUE,FALSE,FALSE,3,FALSE,0.70,VALIDADO cuadro 341
+Liquidez moneda extranjera,liquidez_me,bccr,1451,monthly,2010-01-01,,none,TRUE,local_monetary,FALSE,TRUE,FALSE,TRUE,3,FALSE,0.70,VALIDADO cuadro 507
+Credito sector privado en colones,credit_col,bccr,4814,monthly,2010-01-01,,none,TRUE,local_monetary,FALSE,TRUE,FALSE,TRUE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR
+Credito sector privado en dolares,credit_usd,bccr,4815,monthly,2010-01-01,,none,TRUE,local_monetary,FALSE,TRUE,FALSE,TRUE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR
+Terminos de intercambio,tot,bccr,28746,monthly,2010-01-01,,none,TRUE,flows,FALSE,TRUE,FALSE,TRUE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR
+Cartera credito agropecuario colones,cartera_agro_crc,bccr,144_A_CRC,monthly,2010-01-01,,none,FALSE,islmbp_credit,FALSE,FALSE,FALSE,FALSE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 144 actividad A moneda CRC - pinza cost_share TV
+Cartera credito agropecuario dolares,cartera_agro_usd,bccr,144_A_USD,monthly,2010-01-01,,none,FALSE,islmbp_credit,FALSE,FALSE,FALSE,FALSE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 144 actividad A moneda USD - pinza cost_share TV
+Cartera credito construccion colones,cartera_const_crc,bccr,144_F_CRC,monthly,2010-01-01,,none,FALSE,islmbp_credit,FALSE,FALSE,FALSE,FALSE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 144 actividad F moneda CRC - pinza cost_share TV
+Cartera credito construccion dolares,cartera_const_usd,bccr,144_F_USD,monthly,2010-01-01,,none,FALSE,islmbp_credit,FALSE,FALSE,FALSE,FALSE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 144 actividad F moneda USD - pinza cost_share TV
+Cartera credito comercio colones,cartera_comer_crc,bccr,144_G_CRC,monthly,2010-01-01,,none,FALSE,islmbp_credit,FALSE,FALSE,FALSE,FALSE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 144 actividad G moneda CRC - pinza cost_share NB
+Cartera credito comercio dolares,cartera_comer_usd,bccr,144_G_USD,monthly,2010-01-01,,none,FALSE,islmbp_credit,FALSE,FALSE,FALSE,FALSE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 144 actividad G moneda USD - pinza cost_share NB
+Cartera credito transporte colones,cartera_transp_crc,bccr,144_H_CRC,monthly,2010-01-01,,none,FALSE,islmbp_credit,FALSE,FALSE,FALSE,FALSE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 144 actividad H moneda CRC - pinza cost_share NH
+Cartera credito transporte dolares,cartera_transp_usd,bccr,144_H_USD,monthly,2010-01-01,,none,FALSE,islmbp_credit,FALSE,FALSE,FALSE,FALSE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 144 actividad H moneda USD - pinza cost_share NH
+Cartera credito alojamiento colones,cartera_aloj_crc,bccr,144_I_CRC,monthly,2010-01-01,,none,FALSE,islmbp_credit,FALSE,FALSE,FALSE,FALSE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 144 actividad I moneda CRC - pinza cost_share TV
+Cartera credito alojamiento dolares,cartera_aloj_usd,bccr,144_I_USD,monthly,2010-01-01,,none,FALSE,islmbp_credit,FALSE,FALSE,FALSE,FALSE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 144 actividad I moneda USD - pinza cost_share TV
+Cartera credito infocom colones,cartera_infocom_crc,bccr,144_J_CRC,monthly,2010-01-01,,none,FALSE,islmbp_credit,FALSE,FALSE,FALSE,FALSE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 144 actividad J moneda CRC - pinza cost_share TH
+Cartera credito infocom dolares,cartera_infocom_usd,bccr,144_J_USD,monthly,2010-01-01,,none,FALSE,islmbp_credit,FALSE,FALSE,FALSE,FALSE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 144 actividad J moneda USD - pinza cost_share TH
+Cartera credito profesional colones,cartera_prof_crc,bccr,144_MN_CRC,monthly,2010-01-01,,none,FALSE,islmbp_credit,FALSE,FALSE,FALSE,FALSE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 144 actividad M-N moneda CRC - pinza cost_share TH
+Cartera credito profesional dolares,cartera_prof_usd,bccr,144_MN_USD,monthly,2010-01-01,,none,FALSE,islmbp_credit,FALSE,FALSE,FALSE,FALSE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 144 actividad M-N moneda USD - pinza cost_share TH
+Exportaciones FOB agropecuario,exports_fob_agro,bccr,82_A,monthly,2010-01-01,,none,FALSE,islmbp_exports,FALSE,FALSE,FALSE,FALSE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 82 actividad A - pinza income_share TV
+Exportaciones FOB construccion,exports_fob_const,bccr,82_F,monthly,2010-01-01,,none,FALSE,islmbp_exports,FALSE,FALSE,FALSE,FALSE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 82 actividad F - servicios de construccion (si publica)
+Exportaciones FOB infocom,exports_fob_infocom,bccr,82_J,monthly,2010-01-01,,none,FALSE,islmbp_exports,FALSE,FALSE,FALSE,FALSE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 82 actividad J - servicios TIC
+Exportaciones FOB profesional,exports_fob_prof,bccr,82_MN,monthly,2010-01-01,,none,FALSE,islmbp_exports,FALSE,FALSE,FALSE,FALSE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 82 actividad M-N - servicios empresariales
+Exportaciones FOB alojamiento,exports_fob_aloj,bccr,82_I,monthly,2010-01-01,,none,FALSE,islmbp_exports,FALSE,FALSE,FALSE,FALSE,3,FALSE,0.70,POR_VERIFICAR codigo BCCR cuadro 82 actividad I - servicios de turismo

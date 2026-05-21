@@ -1,0 +1,87 @@
+# =====================================================================
+# .gitignore — pipeline_fx_forecast_cr
+# Secrets, regenerable caches, IDE artifacts, OS files.
+# =====================================================================
+
+# ---- R / RStudio ----------------------------------------------------
+.Rproj.user/
+.Rhistory
+.Rdata
+.RData
+.Ruserdata
+.httr-oauth
+*.Rproj.user
+
+# ---- Secrets / environment ------------------------------------------
+.Renviron
+.Renviron.local
+*.env
+.env
+
+# ---- BCCR SDDE raw cache (regenerable via scripts/01-02) ------------
+data_raw/bccr/*.json
+data_raw/bccr/raw_*.json
+
+# ---- Data folders (raw and intermediate are regenerable) ------------
+data_raw/
+data_intermediate/
+data_final/
+
+# ---- Models (regenerable) -------------------------------------------
+models/*.rds
+
+# ---- Output (regenerable) -------------------------------------------
+output/tables/*
+output/figures/*
+output/logs/*
+
+# ---- cierre_v6 outputs descargables (regenerables) ------------------
+cierre_v6/outputs/raw/
+
+# ---- ZIPs y tarballs ------------------------------------------------
+*.zip
+*.tar.gz
+*.tar.bz2
+output.zip
+
+# ---- Python ---------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# ---- Keep directory structure ---------------------------------------
+!data_raw/.gitkeep
+!data_raw/bccr/.gitkeep
+!data_raw/external/.gitkeep
+!data_intermediate/clean/.gitkeep
+!data_intermediate/features/.gitkeep
+!data_intermediate/diagnostics/.gitkeep
+!data_final/.gitkeep
+!models/.gitkeep
+!output/tables/.gitkeep
+!output/figures/.gitkeep
+!output/logs/.gitkeep
+!cierre_v6/outputs/raw/.gitkeep
+
+# ---- Plots temporales del workspace --------------------------------
+Rplot.png
+Rplots.pdf
+
+# ---- Editor / IDE ---------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ---- OS -------------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db

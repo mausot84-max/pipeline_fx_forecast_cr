@@ -1,0 +1,252 @@
+code,status,name,periodicidad,n,bloque_sondeo
+95000,ok,Con orientación principal al mercado local,NA,3,IMAE-CIIU
+95001,http_400,NA,NA,0,IMAE-CIIU
+95002,ok,Resto,NA,3,IMAE-CIIU
+95003,http_400,NA,NA,0,IMAE-CIIU
+95004,http_400,NA,NA,0,IMAE-CIIU
+95005,http_400,NA,NA,0,IMAE-CIIU
+95006,http_400,NA,NA,0,IMAE-CIIU
+95007,http_400,NA,NA,0,IMAE-CIIU
+95008,http_400,NA,NA,0,IMAE-CIIU
+95009,http_400,NA,NA,0,IMAE-CIIU
+95010,http_400,NA,NA,0,IMAE-CIIU
+95011,http_400,NA,NA,0,IMAE-CIIU
+95012,ok,Extracción de minas y canteras. Nivel,NA,3,IMAE-CIIU
+95013,ok,Industria manufacturera. Nivel,NA,3,IMAE-CIIU
+95014,http_400,NA,NA,0,IMAE-CIIU
+95015,ok,Régimen definitivo. Nivel,NA,3,IMAE-CIIU
+95016,ok,Productos alimenticios diversos. Nivel,NA,3,IMAE-CIIU
+95017,ok,"Textil, prendas vestir, industr cuero. Nivel",NA,3,IMAE-CIIU
+95018,ok,"Papel, sus produc, imprent, editorial. Nivel",NA,3,IMAE-CIIU
+95019,ok,"Sustancias quím, prod quím de petróleo. Nivel",NA,3,IMAE-CIIU
+95020,ok,"Fabric prod metálicos, maquin y equipo. Nivel",NA,3,IMAE-CIIU
+95021,ok,Otras industrias manufactureras. Nivel,NA,3,IMAE-CIIU
+95022,ok,Regímenes especiales. Nivel,NA,3,IMAE-CIIU
+95023,ok,Productos alimenticios diversos. Nivel,NA,3,IMAE-CIIU
+95024,ok,"Textil, prendas vestir, industr cuero. Nivel",NA,3,IMAE-CIIU
+95025,ok,"Papel, sus produc, imprent, editorial. Nivel",NA,3,IMAE-CIIU
+95026,ok,Sustan quím y prod quím deriv petróleo. Nivel,NA,3,IMAE-CIIU
+95027,ok,"Fabric prod metálicos, maquin y equipo. Nivel",NA,3,IMAE-CIIU
+95028,ok,Instrum y suministros médic y dentales. Nivel,NA,3,IMAE-CIIU
+95029,ok,Otras industrias manufactureras. Nivel,NA,3,IMAE-CIIU
+95030,ok,"Electricidad, agua y serv. saneamiento. Nivel",NA,3,IMAE-CIIU
+95031,ok,Construcción. Nivel,NA,3,IMAE-CIIU
+95032,ok,Pública. Nivel,NA,3,IMAE-CIIU
+95033,ok,Privada. Nivel,NA,3,IMAE-CIIU
+95034,ok,Comercio. Nivel,NA,3,IMAE-CIIU
+95035,ok,Índice mensual de actividad comercial. Nivel,NA,3,IMAE-CIIU
+95036,ok,"Alimentos, bebidas y tabaco",NA,3,IMAE-CIIU
+95037,ok,Productos químicos y farmacéuticos,NA,3,IMAE-CIIU
+95038,ok,Materiales de construcción,NA,3,IMAE-CIIU
+95039,ok,Vehículos,NA,3,IMAE-CIIU
+95040,http_400,NA,NA,0,IMAE-CIIU
+95041,ok,Resto de actividades comerciales,NA,3,IMAE-CIIU
+95042,ok,Aparatos eléctricos y del hogar,NA,3,IMAE-CIIU
+95043,ok,"Transporte, almacenamiento. Nivel",NA,3,IMAE-CIIU
+95044,ok,Activ alojamiento y serv de comida. Nivel,NA,3,IMAE-CIIU
+95045,ok,Información y comunicaciones. Nivel,NA,3,IMAE-CIIU
+95046,ok,Actividades financieras y de seguros. Nivel,NA,3,IMAE-CIIU
+95047,ok,Actividades inmobiliarias. Nivel,NA,3,IMAE-CIIU
+95048,ok,"Profes, cient, téc, admin y serv apoyo. Nivel",NA,3,IMAE-CIIU
+95049,ok,Adm. pública y planes seguridad social. Nivel,NA,3,IMAE-CIIU
+95050,ok,Enseñanza y activ. de la salud humana. Nivel,NA,3,IMAE-CIIU
+95051,ok,Otras actividades. Nivel,NA,3,IMAE-CIIU
+95052,http_400,NA,NA,0,IMAE-CIIU
+95053,http_400,NA,NA,0,IMAE-CIIU
+95054,http_400,NA,NA,0,IMAE-CIIU
+95055,http_400,NA,NA,0,IMAE-CIIU
+95056,ok,Nivel,NA,3,IMAE-CIIU
+95057,http_400,NA,NA,0,IMAE-CIIU
+95058,ok,Nivel,NA,3,IMAE-CIIU
+95059,http_400,NA,NA,0,IMAE-CIIU
+95060,http_400,NA,NA,0,IMAE-CIIU
+95061,ok,Variación de los últimos 12 meses,NA,3,IMAE-CIIU
+95062,ok,IMAE. Variación media,NA,3,IMAE-CIIU
+95063,ok,"Agricultura, silvicultura y pesca. Variación media",NA,3,IMAE-CIIU
+95064,ok,Extracción de minas y canteras. Variación media,NA,3,IMAE-CIIU
+95065,ok,Industria manufacturera. Variación media,NA,3,IMAE-CIIU
+95066,http_400,NA,NA,0,IMAE-CIIU
+95067,ok,"Electricidad, agua y serv. saneamiento. Variación media",NA,3,IMAE-CIIU
+95068,ok,Construcción. Variación media,NA,3,IMAE-CIIU
+95069,ok,Pública. Variación media,NA,3,IMAE-CIIU
+95070,ok,Privada. Variación media,NA,3,IMAE-CIIU
+95071,ok,Comercio. Variación media,NA,3,IMAE-CIIU
+95072,ok,"Transporte, almacenamiento. Variación media",NA,3,IMAE-CIIU
+95073,ok,Activ. alojamiento y serv. de comida. Variación media,NA,3,IMAE-CIIU
+95074,ok,Información y comunicaciones. Variación media,NA,3,IMAE-CIIU
+95075,ok,Actividades financieras y de seguros. Variación media,NA,3,IMAE-CIIU
+95076,ok,Actividades inmobiliarias. Variación media,NA,3,IMAE-CIIU
+95077,ok,"Profes, cient, téc, admin y serv apoyo. Variación media",NA,3,IMAE-CIIU
+95078,ok,Adm. pública y planes seguridad social. Variación media,NA,3,IMAE-CIIU
+95079,ok,Enseñanza y activ. de la salud humana. Variación media,NA,3,IMAE-CIIU
+95080,ok,Otras actividades. Variación media,NA,3,IMAE-CIIU
+95081,http_400,NA,NA,0,IMAE-CIIU
+95082,http_400,NA,NA,0,IMAE-CIIU
+95083,http_400,NA,NA,0,IMAE-CIIU
+95084,ok,Variación media,NA,3,IMAE-CIIU
+95085,ok,Variación media,NA,3,IMAE-CIIU
+95086,ok,Tasa de aceleración,NA,3,IMAE-CIIU
+95087,ok,IMAE. Nivel,NA,3,IMAE-CIIU
+95088,ok,"Agricultura, silvicultura y pesca. Nivel",NA,3,IMAE-CIIU
+95089,network_error,NA,NA,0,IMAE-CIIU
+95090,ok,Productos pecuarios. Nivel,NA,3,IMAE-CIIU
+95091,ok,Productos agrícolas. Nivel,NA,3,IMAE-CIIU
+95092,ok,Con orientación principal al mercado local,NA,3,IMAE-CIIU
+95093,http_400,NA,NA,0,IMAE-CIIU
+95094,ok,Resto. Nivel,NA,3,IMAE-CIIU
+95095,http_400,NA,NA,0,IMAE-CIIU
+95096,http_400,NA,NA,0,IMAE-CIIU
+95097,http_400,NA,NA,0,IMAE-CIIU
+95098,http_400,NA,NA,0,IMAE-CIIU
+95099,http_400,NA,NA,0,IMAE-CIIU
+95100,http_400,NA,NA,0,IMAE-CIIU
+95101,http_400,NA,NA,0,IMAE-CIIU
+95102,http_400,NA,NA,0,IMAE-CIIU
+95103,http_400,NA,NA,0,IMAE-CIIU
+95104,ok,Extracción de minas y canteras. Nivel,NA,3,IMAE-CIIU
+95105,ok,Industria manufacturera. Nivel,NA,3,IMAE-CIIU
+95106,ok,Régimen Definitivo. Nivel,NA,3,IMAE-CIIU
+95107,ok,Productos alimenticios diversos. Nivel,NA,3,IMAE-CIIU
+95108,ok,"Textil, prendas vestir, industr cuero. Nivel",NA,3,IMAE-CIIU
+95109,ok,"Papel, sus produc, imprent, editorial. Nivel",NA,3,IMAE-CIIU
+95110,ok,Sustan quím y prod quím deriv petróleo. Nivel,NA,3,IMAE-CIIU
+95111,ok,"Fabric prod metálicos, maquin y equipo. Nivel",NA,3,IMAE-CIIU
+95112,ok,Otras industrias manufactureras. Nivel,NA,3,IMAE-CIIU
+95113,ok,Regímenes Especiales. Nivel,NA,3,IMAE-CIIU
+95114,ok,Productos alimenticios diversos. Nivel,NA,3,IMAE-CIIU
+95115,ok,"Textil, prendas vestir, industr cuero. Nivel",NA,3,IMAE-CIIU
+95116,ok,"Papel, sus produc, imprent, editorial. Nivel",NA,3,IMAE-CIIU
+95117,ok,Sustan quím y prod quím deriv petróleo. Nivel,NA,3,IMAE-CIIU
+95118,ok,"Fabric prod metálicos, maquin y equipo. Nivel",NA,3,IMAE-CIIU
+95119,ok,Instrum y suministros médic y dentales. Nivel,NA,3,IMAE-CIIU
+95120,ok,Otras industrias manufactureras. Nivel,NA,3,IMAE-CIIU
+95121,ok,Manufactura (C). Variación mensual,NA,3,IMAE-CIIU
+95122,ok,Régimen definitivo. Variación mensual,NA,3,IMAE-CIIU
+95123,ok,Productos alimenticios diversos. Variación mensual,NA,3,IMAE-CIIU
+95124,ok,"Textil, prendas vestir, industr cuero. Variación mensual",NA,3,IMAE-CIIU
+95125,ok,"Papel, sus produc, imprent, editorial. Variación mensual",NA,3,IMAE-CIIU
+95126,ok,Sustan quím y prod quím deriv petróleo. Variación mensual,NA,3,IMAE-CIIU
+95127,ok,"Fabric prod metálicos, maquin y equipo. Variación mensual",NA,3,IMAE-CIIU
+95128,ok,Otras industrias manufactureras. Variación mensual,NA,3,IMAE-CIIU
+95129,ok,Regímenes Especiales. Variación mensual,NA,3,IMAE-CIIU
+95130,ok,Productos alimenticios diversos. Variación mensual,NA,3,IMAE-CIIU
+95131,ok,"Textil, prendas vestir, industr cuero. Variación mensual",NA,3,IMAE-CIIU
+95132,ok,"Papel, sus produc, imprent, editorial. Variación mensual",NA,3,IMAE-CIIU
+95133,ok,Sustan quím y prod quím deriv petróleo. Variación mensual,NA,3,IMAE-CIIU
+95134,ok,"Fabric prod metálicos, maquin y equipo. Variación mensual",NA,3,IMAE-CIIU
+95135,ok,Instrum y suministros médic y dentales. Variación mensual,NA,3,IMAE-CIIU
+95136,ok,Otras industrias manufactureras. Variación mensual,NA,3,IMAE-CIIU
+95137,ok,"Electricidad, agua y serv. saneamiento. Nivel",NA,3,IMAE-CIIU
+95138,ok,Construcción. Nivel,NA,3,IMAE-CIIU
+95139,ok,Pública. Nivel,NA,3,IMAE-CIIU
+95140,ok,Privada. Nivel,NA,3,IMAE-CIIU
+95141,ok,Comercio. Nivel,NA,3,IMAE-CIIU
+95142,ok,IMAC. Nivel,NA,3,IMAE-CIIU
+95143,ok,"Alimentos, bebidas y tabaco. Nivel",NA,3,IMAE-CIIU
+95144,ok,Productos químicos y farmacéuticos. Nivel,NA,3,IMAE-CIIU
+95145,ok,Materiales de construcción. Nivel,NA,3,IMAE-CIIU
+95146,ok,Vehículos. Nivel,NA,3,IMAE-CIIU
+95147,http_400,NA,NA,0,IMAE-CIIU
+95148,ok,Resto de actividades comerciales. Nivel,NA,3,IMAE-CIIU
+95149,ok,Aparatos eléctricos y del hogar. Nivel,NA,3,IMAE-CIIU
+95150,ok,"Transporte, almacenamiento. Nivel",NA,3,IMAE-CIIU
+95151,ok,Activ alojamiento y serv de comida. Nivel,NA,3,IMAE-CIIU
+95152,ok,Información y comunicaciones. Nivel,NA,3,IMAE-CIIU
+95153,ok,Actividades financieras y de seguros. Nivel,NA,3,IMAE-CIIU
+95154,ok,Actividades inmobiliarias. Nivel,NA,3,IMAE-CIIU
+95155,ok,"Profes, cient, téc, admin y serv apoyo. Nivel",NA,3,IMAE-CIIU
+95156,ok,Adm. pública y planes seguridad social. Nivel,NA,3,IMAE-CIIU
+95157,ok,Enseñanza y activ. de la salud humana. Nivel,NA,3,IMAE-CIIU
+95158,ok,Otras actividades. Nivel,NA,3,IMAE-CIIU
+95159,http_400,NA,NA,0,IMAE-CIIU
+95160,http_400,NA,NA,0,IMAE-CIIU
+95161,ok,Total industria. Nivel,NA,3,IMAE-CIIU
+95162,ok,Nivel,NA,3,IMAE-CIIU
+95163,http_400,NA,NA,0,IMAE-CIIU
+95164,ok,Nivel,NA,3,IMAE-CIIU
+95165,http_400,NA,NA,0,IMAE-CIIU
+95166,ok,Total industria. Variación mensual,NA,3,IMAE-CIIU
+95167,ok,IMAE. Variación mensual,NA,3,IMAE-CIIU
+95168,ok,"Agricultura, silvicultura y pesca (A). Variación mensual",NA,3,IMAE-CIIU
+95169,ok,Productos exportables. Variación mensual,NA,3,IMAE-CIIU
+95170,ok,Productos pecuarios. Variación mensual,NA,3,IMAE-CIIU
+95171,ok,Productos agrícolas. Variación mensual,NA,3,IMAE-CIIU
+95172,ok,"Con orientación principal al mercado local, V.I",NA,3,IMAE-CIIU
+95173,http_400,NA,NA,0,IMAE-CIIU
+95174,ok,Resto. Variación mensual,NA,3,IMAE-CIIU
+95175,ok,Minas y canteras (B) Variación mensual,NA,3,IMAE-CIIU
+95176,ok,"Electricid, agua, serv saneamien (D,E). Variación mensual",NA,3,IMAE-CIIU
+95177,ok,Construcción (F). Variación mensual,NA,3,IMAE-CIIU
+95178,http_400,NA,NA,0,IMAE-CIIU
+95179,http_400,NA,NA,0,IMAE-CIIU
+95180,ok,"Comerc por mayor y menor, rep vehí (G). Variación mensual",NA,3,IMAE-CIIU
+95181,ok,IMAC. Variación mensual,NA,3,IMAE-CIIU
+95182,ok,"Alimentos, bebidas y tabaco. Variación mensual",NA,3,IMAE-CIIU
+95183,ok,Productos químicos y farmacéuticos. Variación mensual,NA,3,IMAE-CIIU
+95184,ok,Materiales de Construcción . Variación mensual,NA,3,IMAE-CIIU
+95185,ok,Vehículos. Variación mensual,NA,3,IMAE-CIIU
+95186,http_400,NA,NA,0,IMAE-CIIU
+95187,ok,Resto de actividades comerciales. Variación mensual,NA,3,IMAE-CIIU
+95188,ok,Aparatos eléctricos y del hogar. Variación mensual,NA,3,IMAE-CIIU
+95189,ok,Transporte y almacenamiento (H). Variación mensual,NA,3,IMAE-CIIU
+95190,ok,Activ alojamiento y serv de comida (I). Variación mensual,NA,3,IMAE-CIIU
+95191,ok,"Edición, prod de contenido, telec y servic de inf  (J, K). Variación mensual",NA,3,IMAE-CIIU
+95192,ok,Activid financieras y de seguros (K). Variación mensual,NA,3,IMAE-CIIU
+95193,ok,Actividades inmobiliarias. Variación mensual,NA,3,IMAE-CIIU
+95194,ok,"Prof, cient, téc, admi, serv apoyo (,N,O). Variación mensual",NA,3,IMAE-CIIU
+95195,ok,Adm. pública y planes seguridad social. Variación mensual,NA,3,IMAE-CIIU
+95196,ok,Enseñanza y activ. de la salud humana. Variación mensual,NA,3,IMAE-CIIU
+95197,ok,"Otras actividades ( S, T, U). Variación mensual",NA,3,IMAE-CIIU
+95198,http_400,NA,NA,0,IMAE-CIIU
+95199,http_400,NA,NA,0,IMAE-CIIU
+95200,http_400,NA,NA,0,IMAE-CIIU
+95201,ok,"IMAE, variación interanual",NA,3,IMAE-CIIU
+95202,ok,"Agricultura, silvicultura y pesca (A). Variación interanual",NA,3,IMAE-CIIU
+95203,ok,Productos exportables. Variación interanual,NA,3,IMAE-CIIU
+95204,ok,Productos pecuarios. Variación interanual,NA,3,IMAE-CIIU
+95205,ok,Productos agrícolas. Variación interanual,NA,3,IMAE-CIIU
+95206,ok,"Con orientación principal al mercado local, V.I",NA,3,IMAE-CIIU
+95207,http_400,NA,NA,0,IMAE-CIIU
+95208,ok,Resto. Variación interanual,NA,3,IMAE-CIIU
+95209,http_400,NA,NA,0,IMAE-CIIU
+95210,http_400,NA,NA,0,IMAE-CIIU
+95211,http_400,NA,NA,0,IMAE-CIIU
+95212,http_400,NA,NA,0,IMAE-CIIU
+95213,http_400,NA,NA,0,IMAE-CIIU
+95214,http_400,NA,NA,0,IMAE-CIIU
+95215,http_400,NA,NA,0,IMAE-CIIU
+95216,http_400,NA,NA,0,IMAE-CIIU
+95217,http_400,NA,NA,0,IMAE-CIIU
+95218,ok,Minas y canteras (B) Variación interanual,NA,3,IMAE-CIIU
+95219,ok,Manufactura (C). Variación interanual,NA,3,IMAE-CIIU
+95220,http_400,NA,NA,0,IMAE-CIIU
+95221,ok,Régimen definitivo. Variación interanual,NA,3,IMAE-CIIU
+95222,ok,Productos alimenticios diversos. Variación interanual,NA,3,IMAE-CIIU
+95223,ok,"Textil, prendas vestir, industr cuero. Variación interanual",NA,3,IMAE-CIIU
+95224,ok,"Papel, sus produc, imprent, editorial. Variación interanual",NA,3,IMAE-CIIU
+95225,ok,Sustan quím y prod quím deriv petróleo. Variación interanual,NA,3,IMAE-CIIU
+95226,ok,"Fabric prod metálicos, maquin y equipo. Variación interanual",NA,3,IMAE-CIIU
+95227,ok,Otras industrias manufactureras. Variación interanual,NA,3,IMAE-CIIU
+95228,ok,Regímenes especiales. Variación interanual,NA,3,IMAE-CIIU
+95229,ok,Productos alimenticios diversos. Variación interanual,NA,3,IMAE-CIIU
+95230,ok,"Textil, prendas vestir, industr cuero. Variación interanual",NA,3,IMAE-CIIU
+95231,ok,"Papel, sus produc, imprent, editorial. Variación interanual",NA,3,IMAE-CIIU
+95232,ok,"Sustancias quím, prod quím de petróleo. Variación interanual",NA,3,IMAE-CIIU
+95233,ok,"Fabric prod metálicos, maquin y equipo. Variación interanual",NA,3,IMAE-CIIU
+95234,ok,Instrum y suministros médic y dentales. Variación interanual,NA,3,IMAE-CIIU
+95235,ok,Otras industrias manufactureras. Variación interanual,NA,3,IMAE-CIIU
+95236,ok,"Electricid, agua, serv saneamien (D,E). Variación interanual",NA,3,IMAE-CIIU
+95237,ok,Construcción (F). Variación interanual,NA,3,IMAE-CIIU
+95238,ok,Pública. Variación interanual,NA,3,IMAE-CIIU
+95239,ok,Privada. Variación interanual,NA,3,IMAE-CIIU
+95240,ok,"Comerc por mayor y menor, rep vehí (G). Variación interanual",NA,3,IMAE-CIIU
+95241,ok,Índice mensual de actividad comercial. Variación interanual,NA,3,IMAE-CIIU
+95242,ok,"Alimentos, bebidas y tabaco. Variación interanual",NA,3,IMAE-CIIU
+95243,ok,Productos químicos y farmacéuticos. Variación interanual,NA,3,IMAE-CIIU
+95244,ok,Materiales de Construcción (F). Variación interanual,NA,3,IMAE-CIIU
+95245,ok,Vehículos. Variación interanual,NA,3,IMAE-CIIU
+95246,http_400,NA,NA,0,IMAE-CIIU
+95247,ok,Resto de actividades comerciales. Variación interanual,NA,3,IMAE-CIIU
+95248,ok,Aparatos eléctricos y del hogar. Variación interanual,NA,3,IMAE-CIIU
+95249,ok,Transporte y almacenamiento (H). Variación interanual,NA,3,IMAE-CIIU
+95250,ok,Activ alojamiento y serv de comida (I). Variación Interanual,NA,3,IMAE-CIIU

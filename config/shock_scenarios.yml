@@ -1,0 +1,61 @@
+# ============================================================
+# shock_scenarios.yml — Tres escenarios del choque de Ormuz
+# ============================================================
+# Calibración basada en Dallas Fed (mar-2026), Goldman Sachs y
+# Bloomberg upper-tail / cierre parcial.
+#
+# Cada escenario especifica el sendero mensual de:
+#   - Brent (USD/bbl, nivel)
+#   - ΔToT vs. baseline (proporción, ej. -0.04 = -4%)
+#   - Δrisk: salto del VIX (puntos)
+#   - Δfedfunds: respuesta de la Fed (pp)
+#
+# Después del horizonte del choque, las exógenas retornan
+# linealmente al baseline a lo largo de 6 meses (decay).
+# ============================================================
+
+baseline:
+  brent_usd:    75    # promedio pre-choque
+  vix_level:    18
+  fedfunds:     4.25
+  ipc_ext_yoy:  0.025
+
+scenarios:
+  # ---------- A: moderado --------------------------------------
+  - id: A
+    label: "Moderado"
+    description: "Brent $98 sostenido durante 1 trimestre.  Calibración: Dallas Fed Q2 2026."
+    duration_months: 3
+    parameters:
+      brent_usd:       98
+      tot_delta:       -0.04
+      vix_delta:       6
+      fedfunds_delta:  0.50
+      risk_premium_bp: 50
+    citation: "Federal Reserve Bank of Dallas (2026), 'What the closure of the Strait of Hormuz means for the global economy', March 20, 2026."
+
+  # ---------- B: medio -----------------------------------------
+  - id: B
+    label: "Medio"
+    description: "Brent $130 sostenido durante 2 trimestres.  Calibración: escenario base Goldman/Bloomberg."
+    duration_months: 6
+    parameters:
+      brent_usd:       130
+      tot_delta:       -0.09
+      vix_delta:       14
+      fedfunds_delta:  1.00
+      risk_premium_bp: 120
+    citation: "Goldman Sachs Commodity Outlook (junio 2025); Bloomberg Economics (abril 2026)."
+
+  # ---------- C: severo ----------------------------------------
+  - id: C
+    label: "Severo"
+    description: "Brent $180 sostenido durante 3 trimestres con cierre parcial del Estrecho.  Cota superior."
+    duration_months: 9
+    parameters:
+      brent_usd:       180
+      tot_delta:       -0.16
+      vix_delta:       28
+      fedfunds_delta:  1.50
+      risk_premium_bp: 250
+    citation: "Bloomberg (marzo 2026), 'Iran War: How High Could Oil Prices Get with Strait of Hormuz Closure?'"

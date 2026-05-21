@@ -1,0 +1,54 @@
+bloque,seccion,moneda,regimen,codigo_sdde,etiqueta,status,n_obs,archivo,min_fecha,max_fecha,intentos_extra
+imae_ciiu,TOTAL,NA,NA,95087,IMAE general (base 2017). Nivel,ok,195,cierre_v6/outputs/raw/imae_ciiu_TOTAL____.csv,2010-01-31,2026-03-31,0
+imae_ciiu,A,NA,NA,95088,"Agricultura, silvicultura y pesca. Nivel",ok,195,cierre_v6/outputs/raw/imae_ciiu_A____.csv,2010-01-31,2026-03-31,0
+imae_ciiu,B,NA,NA,95104,Extracción de minas y canteras. Nivel,ok,195,cierre_v6/outputs/raw/imae_ciiu_B____.csv,2010-01-31,2026-03-31,0
+imae_ciiu,C,NA,NA,95105,Industria manufacturera. Nivel,ok,195,cierre_v6/outputs/raw/imae_ciiu_C____.csv,2010-01-31,2026-03-31,0
+imae_ciiu,DE,NA,NA,95137,"Electricidad, agua y servicios de saneamiento. Nivel",ok,195,cierre_v6/outputs/raw/imae_ciiu_DE____.csv,2010-01-31,2026-03-31,0
+imae_ciiu,F,NA,NA,95138,Construcción. Nivel,ok,195,cierre_v6/outputs/raw/imae_ciiu_F____.csv,2010-01-31,2026-03-31,0
+imae_ciiu,G,NA,NA,95141,Comercio. Nivel,ok,195,cierre_v6/outputs/raw/imae_ciiu_G____.csv,2010-01-31,2026-03-31,0
+imae_ciiu,H,NA,NA,95150,"Transporte, almacenamiento. Nivel",ok,195,cierre_v6/outputs/raw/imae_ciiu_H____.csv,2010-01-31,2026-03-31,0
+imae_ciiu,I,NA,NA,95151,Actividades de alojamiento y servicios de comida. Nivel,ok,195,cierre_v6/outputs/raw/imae_ciiu_I____.csv,2010-01-31,2026-03-31,0
+imae_ciiu,J,NA,NA,95152,Información y comunicaciones. Nivel,ok,195,cierre_v6/outputs/raw/imae_ciiu_J____.csv,2010-01-31,2026-03-31,0
+imae_ciiu,K,NA,NA,95153,Actividades financieras y de seguros. Nivel,ok,195,cierre_v6/outputs/raw/imae_ciiu_K____.csv,2010-01-31,2026-03-31,0
+imae_ciiu,L,NA,NA,95154,Actividades inmobiliarias. Nivel,ok,195,cierre_v6/outputs/raw/imae_ciiu_L____.csv,2010-01-31,2026-03-31,0
+imae_ciiu,MN,NA,NA,95155,"Profesional, científico, técnico, administrativo y servicios de apoyo. Nivel",ok,195,cierre_v6/outputs/raw/imae_ciiu_MN____.csv,2010-01-31,2026-03-31,0
+imae_ciiu,O,NA,NA,95156,Administración pública y planes de seguridad social. Nivel,ok,195,cierre_v6/outputs/raw/imae_ciiu_O____.csv,2010-01-31,2026-03-31,0
+imae_ciiu,PQ,NA,NA,95157,Enseñanza y actividades de la salud humana. Nivel,ok,195,cierre_v6/outputs/raw/imae_ciiu_PQ____.csv,2010-01-31,2026-03-31,0
+imae_ciiu,RS,NA,NA,95158,Otras actividades. Nivel,ok,195,cierre_v6/outputs/raw/imae_ciiu_RS____.csv,2010-01-31,2026-03-31,0
+imae_regimen,NA,NA,DEFINITIVO,95106,Régimen Definitivo. Nivel (base 2017),ok,195,cierre_v6/outputs/raw/imae_regimen_____DEFINITIVO.csv,2010-01-31,2026-03-31,0
+imae_regimen,NA,NA,ESPECIAL,95113,Regímenes Especiales. Nivel (base 2017),ok,195,cierre_v6/outputs/raw/imae_regimen_____ESPECIAL.csv,2010-01-31,2026-03-31,0
+exports,NA,NA,DEFINITIVO,41320,Exportaciones FOB Régimen Definitivo (USD mensual),ok,98,cierre_v6/outputs/raw/exports_____DEFINITIVO.csv,2010-01-31,2018-02-28,0
+exports,NA,NA,ESPECIAL,41322,Exportaciones FOB Régimen Especial (USD mensual),ok,98,cierre_v6/outputs/raw/exports_____ESPECIAL.csv,2010-01-31,2018-02-28,0
+imports,NA,NA,DEFINITIVO,41331,Importaciones CIF Régimen Definitivo (USD mensual),ok,98,cierre_v6/outputs/raw/imports_____DEFINITIVO.csv,2010-01-31,2018-02-28,0
+imports,NA,NA,ESPECIAL,41332,Importaciones CIF Régimen Especial (USD mensual),ok,98,cierre_v6/outputs/raw/imports_____ESPECIAL.csv,2010-01-31,2018-02-28,0
+ipx,NA,NA,DEFINITIVO,82543,Índice precios exportaciones Régimen Definitivo,fail,0,NA,NA,NA,3
+ipx,NA,NA,ESPECIAL,82555,Índice precios exportaciones Régimen Especial,fail,0,NA,NA,NA,3
+credit_sbn,TOTAL,MN,NA,20579,TOTAL Préstamos OSD al sector privado — hipótesis MN,ok,187,cierre_v6/outputs/raw/credit_sbn_TOTAL_MN__.csv,2010-01-31,2025-07-31,0
+credit_sbn,TOTAL,ME,NA,20578,TOTAL Préstamos OSD al sector privado — hipótesis ME,ok,187,cierre_v6/outputs/raw/credit_sbn_TOTAL_ME__.csv,2010-01-31,2025-07-31,0
+credit_sbn,AGRO,MN,NA,19985,"Agricultura, ganadería, silvicultura, caza y pesca — hipótesis MN",ok,19,cierre_v6/outputs/raw/credit_sbn_AGRO_MN__.csv,2024-01-31,2025-07-31,0
+credit_sbn,AGRO,ME,NA,19984,"Agricultura, ganadería, silvicultura, caza y pesca — hipótesis ME",ok,19,cierre_v6/outputs/raw/credit_sbn_AGRO_ME__.csv,2024-01-31,2025-07-31,0
+credit_sbn,INDUSTRIA,MN,NA,20289,Industria — hipótesis MN,fail,0,NA,NA,NA,3
+credit_sbn,INDUSTRIA,ME,NA,20290,Industria — hipótesis ME,fail,0,NA,NA,NA,3
+credit_sbn,CONSTRUCCION,MN,NA,20079,Construcción — hipótesis MN,ok,19,cierre_v6/outputs/raw/credit_sbn_CONSTRUCCION_MN__.csv,2024-01-31,2025-07-31,0
+credit_sbn,CONSTRUCCION,ME,NA,20080,Construcción — hipótesis ME,ok,19,cierre_v6/outputs/raw/credit_sbn_CONSTRUCCION_ME__.csv,2024-01-31,2025-07-31,0
+credit_sbn,COMERCIO_REST_HOT,MN,NA,20077,"Comercio, restaurantes y hoteles — hipótesis MN",ok,19,cierre_v6/outputs/raw/credit_sbn_COMERCIO_REST_HOT_MN__.csv,2024-01-31,2025-07-31,0
+credit_sbn,COMERCIO_REST_HOT,ME,NA,20078,"Comercio, restaurantes y hoteles — hipótesis ME",ok,19,cierre_v6/outputs/raw/credit_sbn_COMERCIO_REST_HOT_ME__.csv,2024-01-31,2025-07-31,0
+credit_sbn,TRANSP_COMUNIC,MN,NA,20667,"Transporte, almacenamiento y comunicaciones — hipótesis MN",ok,187,cierre_v6/outputs/raw/credit_sbn_TRANSP_COMUNIC_MN__.csv,2010-01-31,2025-07-31,0
+credit_sbn,TRANSP_COMUNIC,ME,NA,20668,"Transporte, almacenamiento y comunicaciones — hipótesis ME",ok,187,cierre_v6/outputs/raw/credit_sbn_TRANSP_COMUNIC_ME__.csv,2010-01-31,2025-07-31,0
+credit_sbn,SERVICIOS,MN,NA,20621,Servicios — hipótesis MN,fail,0,NA,NA,NA,3
+credit_sbn,SERVICIOS,ME,NA,20622,Servicios — hipótesis ME,fail,0,NA,NA,NA,3
+credit_sbn,OTROS_SERVICIOS,MN,NA,20501,Otros servicios — hipótesis MN,ok,19,cierre_v6/outputs/raw/credit_sbn_OTROS_SERVICIOS_MN__.csv,2024-01-31,2025-07-31,0
+credit_sbn,OTROS_SERVICIOS,ME,NA,20502,Otros servicios — hipótesis ME,ok,19,cierre_v6/outputs/raw/credit_sbn_OTROS_SERVICIOS_ME__.csv,2024-01-31,2025-07-31,0
+credit_sbn,VIVIENDA,MN,NA,20755,Vivienda — hipótesis MN,ok,19,cierre_v6/outputs/raw/credit_sbn_VIVIENDA_MN__.csv,2024-01-31,2025-07-31,0
+credit_sbn,VIVIENDA,ME,NA,20756,Vivienda — hipótesis ME,ok,19,cierre_v6/outputs/raw/credit_sbn_VIVIENDA_ME__.csv,2024-01-31,2025-07-31,0
+credit_sbn,CONSUMO,MN,NA,20081,Consumo — hipótesis MN,fail,0,NA,NA,NA,3
+credit_sbn,CONSUMO,ME,NA,20082,Consumo — hipótesis ME,fail,0,NA,NA,NA,3
+credit_sbn,OTROS_PRESTAMOS,MN,NA,20488,Otros préstamos no clasificados — hipótesis MN,ok,19,cierre_v6/outputs/raw/credit_sbn_OTROS_PRESTAMOS_MN__.csv,2024-01-31,2025-07-31,0
+credit_sbn,OTROS_PRESTAMOS,ME,NA,20489,Otros préstamos no clasificados — hipótesis ME,ok,19,cierre_v6/outputs/raw/credit_sbn_OTROS_PRESTAMOS_ME__.csv,2024-01-31,2025-07-31,0
+credit_total_agregado,NA,CRC,NA,4814,Crédito sector privado en colones (validación cruzada),ok,25,cierre_v6/outputs/raw/credit_total_agregado___CRC__.csv,2010-03-31,2016-03-31,0
+credit_sbn,INDUSTRIA_OTRAS,MN,,20333,Otras Industrias — hipótesis MN (leaf),ok,19,cierre_v6/outputs/raw/credit_sbn_INDUSTRIA_OTRAS_MN__.csv,2024-01-31,2025-07-31,NA
+credit_sbn,INDUSTRIA_OTRAS,ME,,20334,Otras Industrias — hipótesis ME (leaf),ok,19,cierre_v6/outputs/raw/credit_sbn_INDUSTRIA_OTRAS_ME__.csv,2024-01-31,2025-07-31,NA
+credit_sbn,CONSUMO_OTROS,MN,,20437,Otros Consumos — hipótesis MN (leaf),ok,19,cierre_v6/outputs/raw/credit_sbn_CONSUMO_OTROS_MN__.csv,2024-01-31,2025-07-31,NA
+credit_sbn,CONSUMO_OTROS,ME,,20438,Otros Consumos — hipótesis ME (leaf),ok,19,cierre_v6/outputs/raw/credit_sbn_CONSUMO_OTROS_ME__.csv,2024-01-31,2025-07-31,NA
+credit_sbn,CONSUMO_TARJETAS,MN,,20653,Tarjetas de crédito — hipótesis MN (leaf),ok,187,cierre_v6/outputs/raw/credit_sbn_CONSUMO_TARJETAS_MN__.csv,2010-01-31,2025-07-31,NA
+credit_sbn,CONSUMO_TARJETAS,ME,,20654,Tarjetas de crédito — hipótesis ME (leaf),ok,187,cierre_v6/outputs/raw/credit_sbn_CONSUMO_TARJETAS_ME__.csv,2010-01-31,2025-07-31,NA

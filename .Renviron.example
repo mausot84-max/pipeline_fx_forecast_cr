@@ -1,0 +1,19 @@
+# ============================================================
+# pipeline_fx_forecast_cr — Environment Variables
+# ============================================================
+# Copy to .Renviron and fill in credentials.
+# NEVER commit .Renviron to version control.
+# After editing, RESTART R (Ctrl+Shift+F10).
+# ============================================================
+
+# --- BCCR SDDE API (new portal, JWT token) --------------------
+# 1. Go to: https://sdd.bccr.fi.cr
+# 2. Register / log in
+# 3. Go to Mi Perfil -> "Generar token" -> "Copiar token"
+# 4. Paste the JWT token below (long string starting with eyJ...)
+BCCR_EMAIL=mausot84@gmail.com
+BCCR_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJCQ0NSLVNEREUiLCJzdWIiOiJtYXVzb3Q4NEBnbWFpbC5jb20iLCJhdWQiOiJTRERFLVNpdGlvRXh0ZXJubyIsImV4cCI6MjUzNDAyMzAwODAwLCJuYmYiOjE3NzU3NzQzNDQsImlhdCI6MTc3NTc3NDM0NCwianRpIjoiMzc4ZjRmYWUtNGFkNi00M2E5LWIwYzMtMDE4OGYyMzQwMjBjIiwiZW1haWwiOiJtYXVzb3Q4NEBnbWFpbC5jb20ifQ.t2pDDIr-HcWHvcK444EyixXTjQjZ15UV5-r4Po5Uwmc
+
+# --- FRED API (Federal Reserve Economic Data) -----------------
+# Register at: https://fred.stlouisfed.org/docs/api/api_key.html
+FRED_API_KEY=18bed0cadf80572b85cbd5232866f894

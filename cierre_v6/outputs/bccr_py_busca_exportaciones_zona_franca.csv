@@ -1,0 +1,44 @@
+codigo,DESCRIPCION,Unidad,Medida,periodo
+2103,Sector Externo/Exportaciones FOB acumuladas [3651]/Por principales productos [1999]/Zona Franca [2103]',Dólar EEUU,Millones,Mensual
+2104,Sector Externo/Por principales productos [2001]/Zona Franca [2104]',Porcentaje Variación Interanual,Millones,Mensual
+2157,Sector Externo/Importaciones CIF acumuladas [3661]/Por categorías económicas [2147]/Materias primas y productos intermedios [2149]/Para la industria y minería [2153]/Zona Franca [2157]',Dólar EEUU,Millones,Mensual
+2158,Sector Externo/Por categorías económicas [2148]/Materias primas y productos intermedios [2150]/Para la industria y minería [2154]/Zona Franca [2158]',Porcentaje Variación Interanual,Millones,Mensual
+2198,Sector Externo/Importaciones CIF acumuladas [3661]/Por categorías económicas [2147]/Bienes de capital [2188]/Para la industria y minería [2194]/Zona Franca [2198]',Dólar EEUU,Millones,Mensual
+2199,Sector Externo/Por categorías económicas [2148]/Bienes de capital [2189]/Para la industria y minería [2195]/Zona Franca [2199]',Porcentaje Variación Interanual,Millones,Mensual
+22904,"Sector Real/Indice Mensual Actividad Económica (IMAE) [3669]/IMAE con IEAT, Serie Original [913]/Industria manufacturera [3009]/Zona Franca [22904]'",Nivel,No definida,Mensual
+22913,"Sector Real/IMAE con IEAT, Serie Original [4919]/Industria manufacturera [4921]/Zona Franca [22913]'",Porcentaje Variación Interanual,No definida,Mensual
+22930,"Sector Real/Indice Mensual Actividad Económica (IMAE) [3669]/IMAE con IEAT, Tendencia Ciclo [914]/Industria manufacturera [3010]/Zona Franca [22930]'",Nivel,No definida,Mensual
+22939,"Sector Real/IMAE con IEAT, Tendencia Ciclo [1982]/Industria manufacturera [4945]/Zona Franca [22939]'",Porcentaje Variación Interanual,No definida,Mensual
+22966,Sector Real/IMAE sin Zona Franca [22966]',Nivel,,Mensual
+22968,Sector Real/IMAE sin Zona Franca Serie Original [22968]',Porcentaje Variación Interanual,NO DEFINIDO,Mensual
+22971,Sector Real/IMAE sin Zona Franca Serie Tendencia Ciclo [22971]',Porcentaje Variación Interanual,NO DEFINIDO,Mensual
+23090,Sector Real/IMAE sin Zona Franca Serie Original [23090]',Porcentaje Variación Media,NO DEFINIDO,Mensual
+23091,Sector Real/IMAE sin Zona Franca Serie Tendencia Ciclo [23091]',Porcentaje Variación Media,NO DEFINIDO,Mensual
+23098,Sector Externo/Inversión directa en la economía declarante [23092]/Total Inversión directa en la economía declarante [23093]/Régimen [23094]/Zona Franca [23098]',Dólar EEUU,Millones,Anual
+23150,Sector Externo/Inversión directa en la economía declarante [23144]/Total Inversión directa en la economía declarante [23145]/Régimen [23146]/Zona Franca [23150]',Dólar EEUU,Millones,Trimestral
+32565,Sector Externo/Inversión directa en la economía declarante [32558]/Total Inversión directa en la economía declarante [32560]/Régimen [32561]/Zona Franca [32565]',Dólar EEUU,Millones,Trimestral
+32714,Sector Externo/Inversión directa en la economía declarante [32558]/Total Inversión directa en la economía declarante [32560]/Régimen [32710]/Zona Franca [32714]',Dólar EEUU,Millones,Trimestral
+35473,"Sector Real/Indice Mensual Actividad Económica (IMAE) [35445]/Indice Mensual Actividad Económica (IMAE) [35446]/IMAE , Serie Original [35449]/Industria manufacturera [35466]/Índice Mensual de la Actividad Manufacturera sin Zona Franca [35473]'",Nivel,No definida,Mensual
+35474,"Sector Real/Indice Mensual Actividad Económica (IMAE) [35447]/IMAE , Serie Original [35450]/Industria manufacturera [35468]/Índice Mensual de la Actividad Manufacturera sin Zona Franca [35474]'",Porcentaje Variación Interanual,No definida,Mensual
+35579,Sector Real/Indice Mensual Actividad Económica (IMAE) [35445]/Indice Mensual Actividad Económica (IMAE) [35446]/IMAE Tendencia Ciclo [35553]/Industria manufacturera [35572]/Índice Mensual de la Actividad Manufacturera sin Zona Franca [35579]',Nivel,No definida,Mensual
+35580,Sector Real/Indice Mensual Actividad Económica (IMAE) [35447]/IMAE Tendencia Ciclo [35555]/Industria manufacturera [35574]/Índice Mensual de la Actividad Manufacturera sin Zona Franca [35580]',Porcentaje Variación Interanual,No definida,Mensual
+35766,"Sector Real/Indice Mensual Actividad Económica (IMAE) [35448]/IMAE , Serie Original [35451]/Industria manufacturera [35467]/Índice Mensual de la Actividad Manufacturera sin Zona Franca [35766]'",Porcentaje Variación Media,No definida,Mensual
+35767,Sector Real/Indice Mensual Actividad Económica (IMAE) [35448]/IMAE Tendencia Ciclo [35556]/Industria manufacturera [35573]/Índice Mensual de la Actividad Manufacturera sin Zona Franca [35767]',Porcentaje Variación Media,No definida,Mensual
+36361,"Sector Real/Indice Mensual Actividad Económica (IMAE) [35445]/Indice Mensual Actividad Económica (IMAE) [35446]/IMAE, Serie Desestacionalizadal [35660]/Total Industria [35834]/Zona Franca [36361]'",Nivel,No definida,Mensual
+36363,"Sector Real/Indice Mensual Actividad Económica (IMAE) [35447]/IMAE, Serie Desestacionalizadal [35661]/Total Industria [35836]/Zona Franca [36363]'",Porcentaje Variación Interanual,No definida,Mensual
+36364,"Sector Real/Indice Mensual Actividad Económica (IMAE) [35448]/IMAE, Serie Desestacionalizadal [35662]/Total Industria [35835]/Zona Franca [36364]'",Porcentaje Variación Media,No definida,Mensual
+36397,"Sector Real/Indice Mensual Actividad Económica (IMAE) [35445]/Indice Mensual Actividad Económica (IMAE) [35446]/IMAE , Serie Original [35449]/Total Industria [36393]/Zona Franca [36397]'",Nivel,No definida,Mensual
+36399,"Sector Real/Indice Mensual Actividad Económica (IMAE) [35447]/IMAE , Serie Original [35450]/Total Industria [36395]/Zona Franca [36399]'",Porcentaje Variación Interanual,No definida,Mensual
+36400,"Sector Real/Indice Mensual Actividad Económica (IMAE) [35448]/IMAE , Serie Original [35451]/Total Industria [36396]/Zona Franca [36400]'",Porcentaje Variación Media,No definida,Mensual
+36409,Sector Real/Indice Mensual Actividad Económica (IMAE) [35445]/Indice Mensual Actividad Económica (IMAE) [35446]/IMAE Tendencia Ciclo [35553]/Total Industria [36405]/Zona Franca [36409]',Nivel,No definida,Mensual
+36411,Sector Real/Indice Mensual Actividad Económica (IMAE) [35447]/IMAE Tendencia Ciclo [35555]/Total Industria [36407]/Zona Franca [36411]',Porcentaje Variación Interanual,No definida,Mensual
+36412,Sector Real/Indice Mensual Actividad Económica (IMAE) [35448]/IMAE Tendencia Ciclo [35556]/Total Industria [36408]/Zona Franca [36412]',Porcentaje Variación Media,No definida,Mensual
+87759,"Sector Real/Indice Mensual Actividad Económica (IMAE) [87701]/Indice Mensual Actividad Económica (IMAE) [87702]/IMAE , Serie Original [87703]/Total Industria [87758]/Zona Franca [87759]'",Nivel,,Mensual
+87822,Sector Real/Indice Mensual Actividad Económica (IMAE) [87701]/Indice Mensual Actividad Económica (IMAE) [87702]/IMAE Tendencia Ciclo [87764]/Total Industria [87821]/Zona Franca [87822]',Nivel,,Mensual
+87850,Sector Real/Indice Mensual Actividad Económica (IMAE) [88136]/IMAE Tendencia Ciclo [87828]/Total Industria [87849]/Zona Franca [87850]',Porcentaje Variación Media,,Mensual
+87925,"Sector Real/Indice Mensual Actividad Económica (IMAE) [87701]/Indice Mensual Actividad Económica (IMAE) [87702]/IMAE, Serie Desestacionalizadal [87853]/Total Industria [87924]/Zona Franca [87925]'",Nivel,,Mensual
+88017,"Sector Real/Indice Mensual Actividad Económica (IMAE) [87960]/IMAE , Serie Original [87961]/Total Industria [88016]/Zona Franca [88017]'",Porcentaje Variación Interanual,,Mensual
+88076,Sector Real/Indice Mensual Actividad Económica (IMAE) [87960]/IMAE Tendencia Ciclo [88019]/Total Industria [88075]/Zona Franca [88076]',Porcentaje Variación Interanual,,Mensual
+88134,"Sector Real/Indice Mensual Actividad Económica (IMAE) [87960]/IMAE, Serie Desestacionalizadal [88078]/Total Industria [88133]/Zona Franca [88134]'",Porcentaje Variación Interanual,,Mensual
+88158,"Sector Real/Indice Mensual Actividad Económica (IMAE) [88136]/IMAE , Serie Original [88137]/Total Industria [88157]/Zona Franca [88158]'",Porcentaje Variación Media,,Mensual
+88181,"Sector Real/Indice Mensual Actividad Económica (IMAE) [88136]/IMAE, Serie Desestacionalizadal [88160]/Total Industria [88180]/Zona Franca [88181]'",Porcentaje Variación Media,,Mensual

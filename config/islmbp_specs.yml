@@ -1,0 +1,75 @@
+# ============================================================
+# islmbp_specs.yml — IS-LM-BP de cuatro cuadrantes
+# ============================================================
+# Especificación del motor estructural mensual para la
+# simulación contrafactual del impuesto silencioso.
+#
+# Cuadrante 2x2 según composición monetaria de ingresos/costos:
+#   TV — ingresos USD, costos CRC ("la trampa terminal")
+#   TH — ingresos USD, costos USD (hedge natural)
+#   NH — ingresos CRC, costos CRC (hedge natural)
+#   NB — ingresos CRC, costos USD (beneficiado)
+#
+# Anclaje cuantitativo: cost_share_usd construido empíricamente
+# desde cuadro 144 BCCR (crédito por actividad × moneda),
+# income_share_usd desde cuadro 82 BCCR (exportaciones por
+# actividad).  Fallback: shares a priori en SECTOR_MATRIX
+# (utils_islmbp.R) documentados con justificación económica.
+# ============================================================
+
+model:
+  id: islmbp_4quadrants
+  name: "IS-LM-BP de cuatro cuadrantes con regla de reacción del BCCR"
+  frequency: monthly
+  sample_start: "2010-01-01"
+  sample_end:   "2024-12-31"
+  hac_bandwidth: 4
+
+# --- Estimación ----------------------------------------------
+estimation:
+  taylor_variants:
+    - id: standard
+      include_q_gap: false
+      label: "Taylor estándar (sin TCR)"
+    - id: extended
+      include_q_gap: true
+      label: "Taylor extendida (con brecha de TCR)"
+  chow_breaks: ["2018-01-01", "2020-03-01"]
+
+# --- Output potencial ----------------------------------------
+output_gap:
+  method: hp
+  lambda: 14400
+  variable_pib_proxy: imae_tc
+
+# --- Agregación sectorial ------------------------------------
+sector_aggregation:
+  quadrant_threshold: 0.5      # umbral para clasificar income/cost
+  exclude_mixed_sectors: true  # excluye manufactura y financiero del agregado
+  source_priority: empirical_then_prior
+  citation_prior: "SECTOR_MATRIX en scripts/utils_islmbp.R; calibración a priori basada en propuesta BCCR marzo 2026 Anexo C + extensión bidimensional documentada en sección 3 del paper."
+
+# --- Pesos PIB por cuadrante (placeholder hasta cuentas nacionales) ---
+pib_weights:
+  TV: 0.20
+  TH: 0.30
+  NH: 0.30
+  NB: 0.20
+
+# --- Métricas del impuesto silencioso ------------------------
+silent_tax_metrics:
+  - id: tax_squeeze_TV
+    formula: "y_TH_yoy_log - y_TV_yoy_log"
+    label:   "Brecha asimétrica en bloque transable"
+  - id: tax_subsidy_NB
+    formula: "y_NB_yoy_log - y_NH_yoy_log"
+    label:   "Subsidio asimétrico en bloque doméstico"
+  - id: silent_tax_amplitude
+    formula: "tax_squeeze_TV + tax_subsidy_NB"
+    label:   "Amplitud total del impuesto silencioso"
+
+# --- Simulación contrafactual --------------------------------
+simulation:
+  baseline_start: "2026-01-01"
+  horizon_months: 18
+  decay_months: 6
