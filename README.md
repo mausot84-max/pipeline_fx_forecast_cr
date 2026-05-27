@@ -1,145 +1,103 @@
 # pipeline_fx_forecast_cr
 
 **Forecasting, Tail Risk, and Regime Detection for the CRC/USD Exchange Rate**
-**+ IS-LM-BP de cuatro cuadrantes: contrafactual del impuesto silencioso**
+**+ Crédito como indicador del IS bajo apreciación cambiaria sostenida**
+
+Pipeline asociado al paper *"Abundancia cambiaria y la brecha creciente de dos economías. Apreciación cambiaria, asimetría sectorial y la divergencia entre producto territorial e ingreso nacional en Costa Rica bajo Mundell-Fleming, 2010–2025"* (Soto Rodríguez, 2026).
 
 ---
 
-## Research Questions
+## Preguntas de investigación
 
-1. What is the plausible distribution of CRC/USD trajectories over 1–24 week horizons?
-2. What is the maximum plausible CRC appreciation (downside) at 95% confidence, given current conditions?
-3. Is there evidence of a transition from FX abundance to compression or stress?
-4. **(ISLMBP add-on)** ¿Cuánto se amplifica la asimetría distributiva sectorial (impuesto silencioso) bajo un choque externo adverso (Ormuz) si el BCCR sostiene el régimen de apreciación vía TPM alta?
+1. ¿Cuál es la distribución plausible de las trayectorias CRC/USD a horizontes de 1 a 24 semanas?
+2. ¿Cuál es la máxima apreciación plausible del CRC al 95 % de confianza dado el régimen actual?
+3. ¿Existe evidencia de transición desde el régimen de abundancia hacia compresión o estrés?
+4. ¿Se observa la propagación al lado real predicha por el aparato IS-LM-BP vía el canal del crédito?
 
 ---
 
-## Architecture: Weekly-First + Monthly Quadrant Add-On
+## Arquitectura: forecasting semanal + Prueba 5 mensual sobre crédito
 
-The pipeline operates at **weekly frequency (Friday close)** as the primary modelling layer for FX forecasting.
+El pipeline opera en frecuencia semanal (cierre de viernes) como capa primaria para forecasting cambiario.
 
-**Add-on IS-LM-BP de cuatro cuadrantes (scripts 20–25):** módulo mensual estructural que descompone la economía costarricense en cuatro cuadrantes sectoriales según composición monetaria de ingresos y costos.  Calibra el motor con OLS+HAC, simula tres escenarios del choque de Ormuz, y produce métricas integradas del impuesto silencioso.
+**Módulo del paper (scripts 27 a 30):** Prueba 5 sobre la dinámica del crédito al sector privado. Reemplaza, en la iteración v8 del paper, al módulo de pinza sectorial σ^Y / σ^C y al ejercicio econométrico IS-TV agregado. La justificación teórica es que, si la curva IS se desplaza a la izquierda en el bloque doméstico bajo apreciación nominal sostenida, el indicador observable más temprano y limpio no es el IMAE agregado sino la dinámica del crédito (Borio, 2014; Schularick & Taylor, 2012; Drehmann, Borio & Tsatsaronis, 2012; Mian, Sufi & Verner, 2017).
 
-### Cuadrante 2×2 sectorial
+### Tres registros del crédito como evidencia del mecanismo IS
 
-|                       | Ingresos colones                              | Ingresos dólares                                 |
-|-----------------------|-----------------------------------------------|--------------------------------------------------|
-| **Costos colones**    | **NH** Hedged CRC-CRC (servicios locales)     | **TV** Muriendo (bananos, construcción preventa) |
-| **Costos dólares**    | **NB** Beneficiado (comercio importador)      | **TH** Hedged USD-USD (zona franca, TIC)         |
+| Registro | Frecuencia | Período           | Test central                                | Script   |
+|----------|------------|-------------------|---------------------------------------------|----------|
+| 1        | Mensual    | 2010-01 a 2025-07 | Chow / sup-Wald @ 2022 sobre serie agregada | `27_credit_aggregate_long.R` |
+| 2        | Mensual    | 2024-01 a 2025-07 | Ranking sectorial 2025 por moneda           | `28_credit_sectoral_144.R`   |
+| 3        | Trimestral | 2022-12 a presente| Razón CEC / total ME (SUGEF Acuerdo 2-10)   | `29_sugef_cec_sec.R`         |
 
-El impuesto silencioso opera transfiriendo márgenes del cuadrante TV hacia el cuadrante NB, con los cuadrantes hedged (TH, NH) en posición neutral.
+Los tres registros convergen sobre un hallazgo único: la asimetría por moneda del frenazo del crédito —concentrada en el componente USD a deudores sin generación de divisas— es la firma cuantitativa del desplazamiento IS bajo apreciación cambiaria sostenida.
 
-### Anclaje empírico de la pinza sectorial
+### Extensión al escenario adverso (sección 8 del paper)
 
-- **`cost_share_usd` (eje x):** construido desde el cuadro 144 BCCR (crédito al sector privado por actividad × moneda).  Series por sector marcadas `POR_VERIFICAR` en el catálogo.
-- **`income_share_usd` (eje y):** construido desde el cuadro 82 BCCR (exportaciones FOB por actividad).  Series por sector marcadas `POR_VERIFICAR` en el catálogo.
-- **Fallback a priori:** valores en `SECTOR_MATRIX` (en `utils_islmbp.R`) calibrados a partir de juicio económico documentado, anclado en la propuesta BCCR marzo 2026 (Anexo C) y extendido a la geometría bidimensional.
-
-### Mapeo IS-LM-BP canónico al motor
-
-| Pieza canónica | Equivalente en el motor |
-|----------------|------------------------|
-| Curva IS       | Desagregada en cuatro: IS_TV + IS_TH + IS_NH + IS_NB |
-| Curva LM       | Implícita en regla de Taylor (TPM como instrumento)  |
-| Curva BP       | Identidad de FX + ITCER (módulo BP explícito pendiente) |
-| Phillips       | Cierre nominal con pass-through cambiario y de petróleo |
-
-### Ecuaciones del motor
-
-| Eq. | Variable dependiente | Regresores | Hipótesis del signo del ITCER |
-|-----|---------------------|------------|--------------------------------|
-| IS_TV | `y_TV_yoy_log` | `us_ip_yoy`, `itcer_yoy`, `tot_yoy`, lag | **β NEGATIVO fuerte** (asfixia margenes) |
-| IS_TH | `y_TH_yoy_log` | `us_ip_yoy`, `tot_yoy`, lag | omitido (hedge natural) |
-| IS_NH | `y_NH_yoy_log` | `r_real`, `cr_col_yoy`, lag | omitido (poca transabilidad) |
-| IS_NB | `y_NB_yoy_log` | `r_real`, `itcer_yoy`, lag | **β POSITIVO** (insumos importados abaratados) |
-| Taylor | `tpm` | `tpm_lag1`, `inflation_yoy`, `output_gap` [, `q_gap`] | — |
-| Phillips | `inflation_yoy_d1` | lag, `output_gap`, `fx_yoy`, `wti_yoy` | — |
-| FX | `fx_sell_yoy_log` | `rate_diff_cr_us`, `tot_yoy`, `vix_d1` | — |
-
-### Métricas del impuesto silencioso
-
-- `tax_squeeze_TV = y_TH - y_TV` — brecha asimétrica en el bloque transable
-- `tax_subsidy_NB = y_NB - y_NH` — subsidio asimétrico en el bloque doméstico
-- `silent_tax_amplitude = squeeze + subsidy` — amplitud total
-
-### Tres escenarios de Ormuz
-
-| Esc. | Brent USD | Duración | ΔToT | ΔVIX | ΔFedFunds | Fuente |
-|------|-----------|----------|------|------|-----------|--------|
-| A — Moderado | 98 | 3m | −4% | +6 | +0.50pp | Dallas Fed Mar 2026 |
-| B — Medio | 130 | 6m | −9% | +14 | +1.00pp | Goldman / Bloomberg base |
-| C — Severo | 180 | 9m | −16% | +28 | +1.50pp | Bloomberg cota superior |
+`30_credit_stress_propagation.R` aplica la elasticidad sectorial del crédito al IMAE estimada en los registros 1 y 2 al escenario Ormuz definido en `config/shock_scenarios.yml` y simulado en `23_islmbp_simulate.R`. Produce la proyección contrafactual del crédito bajo shock para cerrar el aparato narrativo de la sección 8.
 
 ---
 
 ## Quick Start
 
-### 1. Prerequisites
+### 1. Requisitos
 
-- **R ≥ 4.2** with RStudio.
-- BCCR SDDE account ([register](https://gee.bccr.fi.cr/Indicadores/Suscripciones/)).
-- FRED API key.
+- R ≥ 4.2 con RStudio
+- Cuenta BCCR SDDE ([registro](https://gee.bccr.fi.cr/Indicadores/Suscripciones/))
+- API key de FRED
 
-### 2. Credentials
+### 2. Credenciales
 
 ```bash
 cp .Renviron.example .Renviron
+# editar y colocar BCCR_EMAIL, BCCR_TOKEN, FRED_API_KEY
 ```
 
-### 3. Run
+### 3. Correr la Prueba 5 completa
 
 ```r
-# Pipeline completo (forecasting + ISLMBP):
-scripts <- sort(list.files("scripts", "^[0-9]+.*\\.R$", full.names=TRUE))
-for (s in scripts) source(s)
+source("scripts/00_setup.R")
 
-# Sólo bloque ISLMBP (asume features_monthly.rds existe):
-source("run_islmbp.R")
+# Prueba 5 — los tres registros
+source("scripts/27_credit_aggregate_long.R")
+source("scripts/28_credit_sectoral_144.R")
+source("scripts/29_sugef_cec_sec.R")   # requiere Excel SUGEF en data_raw/sugef/
+
+# Extensión Ormuz al crédito (sección 8 del paper)
+source("scripts/30_credit_stress_propagation.R")
+
+# Validación independiente (6 checks contra tolerancias documentadas)
+source("valida_paper.R")
 ```
 
-### 4. Outputs del bloque ISLMBP
+### 4. Outputs
 
-- **Tablas:** `output/tables/paper_tabla{1..7}_*.csv` + `paper_hechos_estilizados.csv`
-- **Figuras:** `output/figures/paper_fig{1..6}_*.png`
-- **Diagnóstico:** `data_intermediate/islmbp/coverage_report.csv` + `quadrant_mapping.csv`
+- `output/credit_breakpoints_baiperron.csv` — fechas de quiebre endógenas
+- `output/credit_supwald_2022.csv` — estadístico y p-valor del Chow @ 2022
+- `output/credit_means_subperiods.csv` — medias pre/post 2022 por moneda
+- `output/credit_sectoral_deceleration_ranking.csv` — ranking sectorial 2025
+- `output/sugef_cec_ratios.csv` — razones SUGEF CEC/total ME y flujos
+- `output/credit_stress_propagation_table.csv` — proyección Ormuz al crédito
+- `output/fig_credit_*.png` — gráficos correspondientes
 
 ---
 
 ## Configuration
 
-| File | Purpose |
-|------|---------|
-| `config/series_bccr_template.csv` | Catálogo BCCR (incluye placeholders crédito por actividad/moneda y exportaciones por actividad) |
-| `config/series_external_template.csv` | FRED catalog |
-| `config/horizons.csv` | Forecast horizons |
-| `config/model_specs.yml` | Forecasting parameters |
-| `config/regime_rules.yml` | Regime thresholds |
-| `config/islmbp_specs.yml` | IS-LM-BP parameters (cuadrante 2×2, pesos PIB, métricas) |
-| `config/shock_scenarios.yml` | Tres escenarios de Ormuz |
+| File                              | Purpose                                                   |
+|-----------------------------------|-----------------------------------------------------------|
+| `config/series_bccr_template.csv` | Catálogo BCCR (crédito SBN por actividad y moneda)        |
+| `config/series_external_template.csv` | Catálogo FRED                                          |
+| `config/horizons.csv`             | Horizontes de forecasting                                 |
+| `config/model_specs.yml`          | Parámetros de los modelos de forecasting                  |
+| `config/regime_rules.yml`         | Umbrales del detector de régimen                          |
+| `config/shock_scenarios.yml`      | Tres escenarios de Ormuz                                  |
 
 ---
 
-## Códigos BCCR pendientes de verificación
+## SUGEF Acuerdo 2-10 — preparación manual
 
-Antes de la primera corrida productiva, verificar en gee.bccr.fi.cr los códigos de las series marcadas `POR_VERIFICAR` en `notes`:
-
-- **IMAE sectoriales** (cuadro 954): `imae_agro`, `imae_comer`, `imae_const`, `imae_aloj`, `imae_transp`, `imae_infocom`, `imae_prof`
-- **Crédito por actividad × moneda** (cuadro 144): `cartera_{agro,const,comer,transp,aloj,infocom,prof}_{crc,usd}`
-- **Exportaciones por actividad** (cuadro 82): `exports_fob_{agro,const,infocom,prof,aloj}`
-- **Crédito agregado por moneda**: `credit_col`, `credit_usd`
-- **Términos de intercambio**: `tot`
-
-Si alguna serie no está disponible, el pipeline degrada gracefully: los shares observados quedan `NA` y el motor cae al fallback de priors en `SECTOR_MATRIX`.
-
----
-
-## Dependencies
-
-**Core:** dplyr, tidyr, readr, ggplot2, ggrepel, lubridate, zoo, httr, jsonlite, yaml
-**Modelling:** forecast, glmnet, quantreg, vars, sandwich, lmtest, broom
-**Plotting:** scales, gridExtra
-
-All installed automatically by `00_setup.R`.
+El reporte SUGEF de exposición cambiaria (clasificación CEC / SEC) se publica trimestralmente desde diciembre 2022 en `sugef.fi.cr`. El pipeline lee los archivos Excel desde `data_raw/sugef/` con nomenclatura `sugef_cec_sec_YYYY_QN.xlsx`. Descargar manualmente y colocar en esa carpeta antes de correr `29_sugef_cec_sec.R`. El parser inicial cubre el layout vigente de la SUGEF; ajustar `parse_sugef()` si la estructura del Excel cambia.
 
 ---
 
@@ -150,53 +108,67 @@ All installed automatically by `00_setup.R`.
 git clone https://github.com/mausot84-max/pipeline_fx_forecast_cr.git
 cd pipeline_fx_forecast_cr
 
-# 2. Crear .Renviron con tus credenciales BCCR SDDE
+# 2. Configurar credenciales
 cp .Renviron.example .Renviron
-#    editar .Renviron y colocar BCCR_EMAIL y BCCR_TOKEN
-#    obtener el token en https://gee.bccr.fi.cr/Indicadores/Suscripciones/
+#    editar y colocar BCCR_EMAIL, BCCR_TOKEN, FRED_API_KEY
 
 # 3. Abrir el proyecto R
 open pipeline_fx_forecast_cr.Rproj
 ```
 
 ```r
-# 4. Desde dentro de RStudio, instalar dependencias y correr setup
+# 4. Dependencias
 source("scripts/00_setup.R")
 
-# 5. Correr la pinza empírica completa (descubrimiento + descarga + cómputo)
-source("cierre_v6/00_run_pinza_completa.R")
+# 5. Prueba 5 + validación
+source("scripts/27_credit_aggregate_long.R")
+source("scripts/28_credit_sectoral_144.R")
+source("scripts/29_sugef_cec_sec.R")
+source("scripts/30_credit_stress_propagation.R")
+source("valida_paper.R")
 ```
 
-Los outputs de la pinza quedan en `cierre_v6/outputs/`. La descarga inicial del BCCR toma 3-4 minutos por la pausa anti rate-limit del SDDE.
+Tiempo total estimado: 8 a 12 minutos (la pausa anti rate-limit del SDDE domina).
 
-### Reproducir sólo la pinza empírica del paper
+---
 
-```r
-source("cierre_v6/02_download_pinza_empirica.R")    # descarga 47 series
-source("cierre_v6/10_validar_y_computar_pinza.R")   # validación hipótesis MN/ME
-source("cierre_v6/11_pinza_v2.R")                   # σ_C ventana corta + larga
-```
+## Validación independiente — los seis checks
 
-Outputs centrales:
-- `sigma_C_v2_corto.csv` — foto sectorial enero 2024 a julio 2025
-- `sigma_C_v2_largo.csv` — serie anual TOTAL 2010 a 2025
-- `sigma_C_v2_largo_resumen.csv` — hitos clave (mínimo, máximo, años pivote)
-- `sigma_C_v2_triangul.csv` — sanity check contable
+El script `valida_paper.R` verifica seis resultados centrales del paper contra tolerancias documentadas:
+
+| ID | Check                                          | Tolerancia                                    |
+|----|------------------------------------------------|-----------------------------------------------|
+| c1 | Manifest de descargas crédito                  | ≥18 OK y fail ≤8 (fails son agregadores)      |
+| c2 | Desaceleración crédito USD post-2022           | Δ < −6 pp, post < 3 %                         |
+| c3 | Estabilidad del crédito CRC post-2022          | \|Δ\| < 2 pp                                  |
+| c4 | Chow test @ 2022 sobre crédito USD             | F > 15, p < 0.001                             |
+| c5 | Ranking sectorial 2025 USD                     | Vivienda < −10 %, Industria < −5 %            |
+| c6 | SUGEF razón CEC / total ME                     | entre 55 % y 70 %                             |
+
+El check c6 se marca SKIP si el archivo SUGEF no está en `data_raw/sugef/`; la cifra ~ 61,8 % al cierre 2022 corresponde al reporte público de SUGEF Acuerdo 2-10 y se cita directamente en el paper.
+
+---
+
+## Dependencias R
+
+**Core:** dplyr, tidyr, readr, ggplot2, lubridate, zoo, httr, jsonlite, yaml
+**Modelos:** strucchange (Bai-Perron, sup-Wald), sandwich, lmtest, broom
+**Excel:** readxl (parser SUGEF)
+
+Instaladas automáticamente por `00_setup.R`.
 
 ---
 
 ## Citar este trabajo
 
-Si usás el pipeline o los hallazgos en tu propia investigación, citá el paper asociado:
-
-> Soto Rodríguez, M. (2026). *Cuando la abundancia no se absorbe: una conjetura sobre la apreciación real y el ajuste sectorial en Costa Rica bajo Mundell-Fleming, 2010–2025*. Working paper.
+> Soto Rodríguez, M. (2026). *Abundancia cambiaria y la brecha creciente de dos economías. Apreciación cambiaria, asimetría sectorial y la divergencia entre producto territorial e ingreso nacional en Costa Rica bajo Mundell-Fleming, 2010–2025*. Working paper. II Concurso de Investigación Económica Eduardo Lizano Fait, Academia de Centroamérica.
 
 BibTeX:
 
 ```bibtex
 @unpublished{sotorodriguez2026abundancia,
   author = {Soto Rodríguez, Mauricio},
-  title  = {Cuando la abundancia no se absorbe: una conjetura sobre la apreciación real y el ajuste sectorial en Costa Rica bajo Mundell-Fleming, 2010--2025},
+  title  = {Abundancia cambiaria y la brecha creciente de dos economías: Apreciación cambiaria, asimetría sectorial y la divergencia entre producto territorial e ingreso nacional en Costa Rica bajo Mundell-Fleming, 2010--2025},
   year   = {2026},
   note   = {Working paper. Pipeline disponible en https://github.com/mausot84-max/pipeline_fx_forecast_cr}
 }
@@ -204,15 +176,19 @@ BibTeX:
 
 ---
 
-## Licencia
+## Literatura de respaldo de la Prueba 5
 
-Código distribuido bajo [licencia MIT](LICENSE). El paper asociado y los documentos de respaldo se distribuyen bajo Creative Commons Atribución 4.0 Internacional (CC-BY 4.0) cuando se publiquen.
+- Borio, C. (2014). "The financial cycle and macroeconomics: What have we learnt?" *Journal of Banking & Finance*, 45, 182-198.
+- Schularick, M. & Taylor, A. M. (2012). "Credit Booms Gone Bust: Monetary Policy, Leverage Cycles, and Financial Crises, 1870–2008." *American Economic Review*, 102(2), 1029-61.
+- Drehmann, M., Borio, C., & Tsatsaronis, K. (2012). "Characterising the financial cycle: don't lose sight of the medium term." *BIS Working Papers* No. 380.
+- Mian, A., Sufi, A., & Verner, E. (2017). "Household Debt and Business Cycles Worldwide." *Quarterly Journal of Economics*, 132(4), 1755-1817.
+- Aikman, D. et al. (2018). "Measuring risks to UK financial stability." *Bank of England Staff Working Paper* No. 738.
 
 ---
 
-## Contribuciones y discusión
+## Licencia
 
-Issues y pull requests son bienvenidos. Para discusión académica o aportes al marco analítico, abrir un issue con el tag `discussion`. Para reportes de bugs en el pipeline o problemas de reproducibilidad, abrir issue con tag `bug` y adjuntar la versión de R y los resultados de `sessionInfo()`.
+Código distribuido bajo [licencia MIT](LICENSE).
 
 ---
 
