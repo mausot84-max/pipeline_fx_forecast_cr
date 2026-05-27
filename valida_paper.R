@@ -241,6 +241,33 @@ if (file.exists(m9_path)) {
 check("c9", "MONEX excedente diario coincide con cifra del paper", ok9, msg9)
 
 # -------------------------------------------------------------------------
+# c10: Pinza cambiaria sectorial (reporte 1900)
+#   - Excedente diario promedio 2025 entre USD 20 y 30 millones
+#   - Comercio aparece como demandante neto (saldo Compra-Venta < 0)
+#   - Profesional/M-N aparece como oferente neto (Compra-Venta > 0)
+# -------------------------------------------------------------------------
+ok10 <- NA; msg10 <- "Correr scripts/34_pinza_cambiaria_sectorial.R primero"
+anual_path <- "output/pinza_cambiaria_anual.csv"
+sect_path  <- "output/pinza_cambiaria_sectorial.csv"
+if (file.exists(anual_path) && file.exists(sect_path)) {
+  an <- read_csv(anual_path, show_col_types = FALSE)
+  se <- read_csv(sect_path,  show_col_types = FALSE)
+  y2025 <- an %>% filter(year == 2025)
+  if (nrow(y2025) > 0) {
+    neto_d <- y2025$Neto_diaria[1]
+    comercio_neto <- se %>% filter(grepl("Comercio", desc)) %>% pull(saldo_neto) %>% first()
+    prof_neto     <- se %>% filter(grepl("profesionales", desc)) %>% pull(saldo_neto) %>% first()
+    cond_neto     <- !is.na(neto_d) && (neto_d >= 20) && (neto_d <= 30)
+    cond_comercio <- !is.na(comercio_neto) && comercio_neto < 0
+    cond_prof     <- !is.na(prof_neto)     && prof_neto     > 0
+    ok10 <- cond_neto && cond_comercio && cond_prof
+    msg10 <- sprintf("2025 neto diario=%.2f M (esperado [20,30]); Comercio neto=%.0f (esperado <0); Profesional neto=%.0f (esperado >0)",
+                     neto_d, comercio_neto, prof_neto)
+  }
+}
+check("c10", "Pinza cambiaria 2025 + saldos sectoriales", ok10, msg10)
+
+# -------------------------------------------------------------------------
 # Resumen
 # -------------------------------------------------------------------------
 pass <- sum(unlist(results) == "PASS")

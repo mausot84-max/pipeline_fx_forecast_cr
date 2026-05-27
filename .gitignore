@@ -28,7 +28,7 @@ data_raw/external/
 data_raw/sugef/
 data_intermediate/
 data_final/
-# Excel inputs en data_raw/cuentas_nacionales/ y data_raw/imaes_web/
+# Excel inputs en data_raw/cuentas_nacionales/, /imaes_web/ y /sdde_reporte_1900/
 # SÍ se commitean porque son descargas manuales no recreables vía API.
 
 # ---- Models (regenerable) -------------------------------------------
