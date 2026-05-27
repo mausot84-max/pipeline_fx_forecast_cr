@@ -2,6 +2,9 @@ concept_name,var_name,source,series_code,frequency,start_date,end_date,transform
 Tipo de cambio venta,fx_sell,bccr,318,daily,2010-01-01,,none,TRUE,target,TRUE,TRUE,TRUE,TRUE,12,TRUE,0.90,VALIDADO
 Tipo de cambio compra,fx_buy,bccr,317,daily,2010-01-01,,none,TRUE,target,FALSE,FALSE,FALSE,FALSE,12,TRUE,0.90,VALIDADO
 TC MONEX promedio,fx_monex,bccr,3323,daily,2010-01-01,,none,TRUE,target,FALSE,TRUE,FALSE,TRUE,4,TRUE,0.85,VALIDADO TC promedio MONEX
+Monto negociado MONEX,monex_monto,bccr,3324,daily,2015-01-01,,none,FALSE,monex,FALSE,FALSE,FALSE,FALSE,4,FALSE,0.70,POR_VERIFICAR código MONEX monto negociado
+Demanda diaria MONEX,monex_demanda,bccr,3325,daily,2015-01-01,,none,FALSE,monex,FALSE,FALSE,FALSE,FALSE,4,FALSE,0.70,POR_VERIFICAR código MONEX demanda
+Oferta diaria MONEX,monex_oferta,bccr,3326,daily,2015-01-01,,none,FALSE,monex,FALSE,FALSE,FALSE,FALSE,4,FALSE,0.70,POR_VERIFICAR código MONEX oferta
 TPM,tpm,bccr,3541,daily,2010-01-01,,none,TRUE,local_monetary,TRUE,TRUE,TRUE,TRUE,4,FALSE,0.80,VALIDADO
 Tasa basica pasiva,tbp,bccr,423,daily,2010-01-01,,none,TRUE,local_monetary,FALSE,TRUE,FALSE,TRUE,4,FALSE,0.80,VALIDADO
 Tasa efectiva en dolares,ted,bccr,23698,daily,2010-01-01,,none,TRUE,local_monetary,FALSE,TRUE,FALSE,TRUE,4,FALSE,0.70,VALIDADO

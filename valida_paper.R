@@ -194,6 +194,53 @@ if (file.exists(ratios_path)) {
 check("c7", "Crédito USD/PIB cae bajo régimen abundancia", ok7, msg7)
 
 # -------------------------------------------------------------------------
+# c8: Prueba 2 sobre 15 sectores CIIU — rechazo en >= 4 sectores @ 2022-01
+# -------------------------------------------------------------------------
+# La hipótesis no es rechazo uniforme; es rechazo localizado en sectores
+# con composición monetaria asimétrica. Esperado: al menos 4 secciones
+# rechazan estabilidad al 5% en 2022-01-01, incluyendo Manufactura y
+# Financieras (los sectores estructuralmente más cíclicos).
+ok8 <- NA; msg8 <- "Archivo prueba2_15ciiu.csv no encontrado — correr scripts/33_prueba2_15ciiu.R"
+p8_path <- "output/prueba2_15ciiu.csv"
+if (file.exists(p8_path)) {
+  r8 <- read_csv(p8_path, show_col_types = FALSE)
+  col_p_2022 <- grep("p_.*2022", names(r8), value = TRUE)[1]
+  if (!is.na(col_p_2022)) {
+    sig <- r8 %>% filter(.data[[col_p_2022]] < 0.05) %>% pull(name)
+    n_sig <- length(sig)
+    has_manu <- any(grepl("Manufactura", sig))
+    has_fin  <- any(grepl("Financieras", sig))
+    ok8 <- (n_sig >= 4) && has_manu && has_fin
+    msg8 <- sprintf("Prueba 2 @ 2022-01: %d/%d sectores rechazan estabilidad; incluyen Manufactura=%s, Financieras=%s",
+                    n_sig, nrow(r8), has_manu, has_fin)
+  }
+}
+check("c8", "Prueba 2 sobre 15 CIIU @ 2022", ok8, msg8)
+
+# -------------------------------------------------------------------------
+# c9: MONEX — excedente diario 2025 entre USD 20 y USD 35 millones
+# -------------------------------------------------------------------------
+ok9 <- NA; msg9 <- "Archivo MONEX no encontrado — correr scripts/32_monex_excedente.R"
+m9_path <- "output/monex_excedente_anual.csv"
+if (file.exists(m9_path)) {
+  m9 <- read_csv(m9_path, show_col_types = FALSE)
+  if ("excedente_diario_prom" %in% names(m9)) {
+    last_year <- max(m9$year, na.rm = TRUE)
+    last_obs <- m9 %>% filter(year == last_year)
+    if (nrow(last_obs) > 0) {
+      exc <- last_obs$excedente_diario_prom[1]
+      ok9 <- (exc >= 20) && (exc <= 35)
+      msg9 <- sprintf("MONEX excedente diario %d: %.1f M USD (esperado entre 20 y 35)",
+                      last_year, exc)
+    }
+  }
+} else {
+  msg9 <- paste(msg9, "Los códigos MONEX (3324, 3325, 3326) en series_bccr_template.csv",
+                "están marcados POR_VERIFICAR; ajustar si no responden.")
+}
+check("c9", "MONEX excedente diario coincide con cifra del paper", ok9, msg9)
+
+# -------------------------------------------------------------------------
 # Resumen
 # -------------------------------------------------------------------------
 pass <- sum(unlist(results) == "PASS")
