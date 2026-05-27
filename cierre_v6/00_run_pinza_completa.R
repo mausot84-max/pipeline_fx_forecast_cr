@@ -62,6 +62,13 @@ if (RUN_DOWNLOAD) {
     stop("Falta cierre_v6/codes_seleccionados.csv. Corré primero el paso 1.")
   }
   source("cierre_v6/02_download_pinza_empirica.R")
+  # Descargar leafs faltantes (códigos hijos de Industria, Servicios, Consumo
+  # cuyos padres devuelven HTTP 400). Necesarios para que valida_paper.R
+  # pueda calcular el ranking sectorial 2025 USD (c5).
+  if (file.exists("cierre_v6/02c_descargar_leaf_faltantes.R")) {
+    message("\n[run_pinza] Paso 2b — descarga de códigos leaf faltantes")
+    source("cierre_v6/02c_descargar_leaf_faltantes.R")
+  }
 } else {
   message("\n[run_pinza] Salteando paso 2 (RUN_DOWNLOAD=FALSE).")
 }

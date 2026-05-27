@@ -22,10 +22,14 @@
 data_raw/bccr/*.json
 data_raw/bccr/raw_*.json
 
-# ---- Data folders (raw and intermediate are regenerable) ------------
-data_raw/
+# ---- Data folders (raw API caches y intermediate son regenerables) ------
+data_raw/bccr/
+data_raw/external/
+data_raw/sugef/
 data_intermediate/
 data_final/
+# Excel inputs en data_raw/cuentas_nacionales/ y data_raw/imaes_web/
+# SÍ se commitean porque son descargas manuales no recreables vía API.
 
 # ---- Models (regenerable) -------------------------------------------
 models/*.rds
@@ -85,3 +89,4 @@ Rplots.pdf
 .LSOverride
 ._*
 Thumbs.db
+.positai

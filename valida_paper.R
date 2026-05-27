@@ -172,6 +172,28 @@ if (file.exists(sugef_path)) {
 check("c6", "SUGEF: razón CEC/total ME", ok6, msg6)
 
 # -------------------------------------------------------------------------
+# c7: Crédito USD como % PIB cae > 3 pp post-2022 (lectura normalizada)
+# -------------------------------------------------------------------------
+ok7 <- NA; msg7 <- "Archivo crédito/PIB no encontrado"
+ratios_path <- "output/credito_pct_pib.csv"
+if (file.exists(ratios_path)) {
+  r7 <- read_csv(ratios_path, show_col_types = FALSE)
+  pre_me  <- r7 %>% filter(year <  2022) %>% pull(credit_me_pct_pib) %>% mean()
+  post_me <- r7 %>% filter(year >= 2022) %>% pull(credit_me_pct_pib) %>% mean()
+  delta   <- post_me - pre_me
+  pre_mn  <- r7 %>% filter(year <  2022) %>% pull(credit_mn_pct_pib) %>% mean()
+  post_mn <- r7 %>% filter(year >= 2022) %>% pull(credit_mn_pct_pib) %>% mean()
+  delta_mn <- post_mn - pre_mn
+  # Esperado: USD/PIB cae al menos 3 pp; CRC/PIB se mantiene o sube
+  ok7 <- (delta < -3) && (delta_mn > -1)
+  msg7 <- sprintf("USD/PIB: pre=%.2f%%, post=%.2f%% (Δ=%.2f pp); CRC/PIB: pre=%.2f%%, post=%.2f%% (Δ=%.2f pp). Esperado USD Δ<-3, CRC Δ>-1.",
+                  pre_me, post_me, delta, pre_mn, post_mn, delta_mn)
+} else {
+  msg7 <- "Correr scripts/31_credit_pib_ratio.R antes para generar credito_pct_pib.csv"
+}
+check("c7", "Crédito USD/PIB cae bajo régimen abundancia", ok7, msg7)
+
+# -------------------------------------------------------------------------
 # Resumen
 # -------------------------------------------------------------------------
 pass <- sum(unlist(results) == "PASS")
