@@ -1,0 +1,22 @@
+=== Recomputación del crédito ME real (deflactado por CPI EE. UU.) ===
+
+PIB CRC nominal       : +27.30 %
+IPC CR acumulado      : +8.40 % (paper)
+PIB CRC real          : +17.44 %  (referencia)
+
+Cartera MN nominal    : +29.50 %
+Cartera MN real (CRC) : +19.46 %
+
+Cartera ME nominal USD: +26.00 % (paper)
+
+--- Deflactando por CPI EE. UU. (varias convenciones) ---
+CPIAUCSL  dic21 → dic25 : 16.09 %  → ME real USD = 8.54 %
+CPIAUCSL  prom 21 → 25  : 18.82 %  → ME real USD = 6.05 %
+CPIAUCNS  dic21 → dic25 : 16.23 %  → ME real USD = 8.40 %
+CPIAUCNS  prom 21 → 25  : 18.81 %  → ME real USD = 6.05 %
+
+--- Tabla comparativa final ---
+PIB real CRC          : +17.44 %
+Cartera MN real CRC   : +19.46 %
+Cartera ME real USD   : +7.23 % (mediana de las 4 convenciones)
+
